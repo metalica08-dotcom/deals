@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-Beauty 스킨케어 기업 매각 — Buyer Universe 2025</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a1628;
+    --bg-soft: #0f1f3a;
+    --bg-card: #14264a;
+    --bg-card2: #162850;
+    --text: #f0f3f8;
+    --text-sub: #d1d9e6;
+    --text-muted: #6d7b94;
+    --accent: #3b8fff;
+    --accent-light: #7ab6ff;
+    --mint: #5eddb8;
+    --amber: #ffb23f;
+    --coral: #ff8585;
+    --purple: #a48cff;
+    --green: #4ade80;
+    --rose: #fb7185;
+    --border: rgba(255,255,255,0.07);
+    --radius: 20px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 70% 30%, rgba(251,113,133,0.14) 0%, transparent 55%),
+                radial-gradient(ellipse at 15% 75%, rgba(94,221,184,0.08) 0%, transparent 50%),
+                linear-gradient(160deg, #2a1535 0%, #0f1f3a 45%, #0a1628 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -20%; right: -10%;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(251,113,133,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative; z-index: 1;
+    max-width: 1200px; margin: 0 auto;
+    padding: clamp(80px,12vw,140px) 32px clamp(60px,8vw,100px);
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 60px; align-items: center; width: 100%;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(251,113,133,0.12);
+    border: 1px solid rgba(251,113,133,0.28);
+    color: var(--rose);
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+    padding: 6px 14px; border-radius: 999px; margin-bottom: 28px;
+  }
+
+  .hero-title {
+    font-size: clamp(34px,5.5vw,62px);
+    font-weight: 800; line-height: 1.08;
+    letter-spacing: -0.04em; margin-bottom: 20px;
+  }
+  .hero-title em {
+    font-style: normal;
+    background: linear-gradient(135deg, #fb7185 0%, #ffb23f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(14px,1.8vw,16px);
+    color: var(--text-sub); font-weight: 400;
+    line-height: 1.8; margin-bottom: 36px; max-width: 560px;
+  }
+
+  .hero-stat-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+
+  .hero-stat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 14px; padding: 16px 20px; min-width: 90px;
+  }
+  .hero-stat-num {
+    font-size: 24px; font-weight: 800;
+    letter-spacing: -0.04em; line-height: 1; margin-bottom: 4px;
+  }
+  .hero-stat-label {
+    font-size: 11px; font-weight: 600;
+    color: var(--text-muted); letter-spacing: 0.04em; line-height: 1.4;
+  }
+
+  .hero-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+  .meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .meta-label {
+    font-size: 11px; font-weight: 700;
+    color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .meta-value { font-size: 13px; font-weight: 700; color: var(--text); }
+
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: var(--radius); padding: 28px; position: relative;
+  }
+  .hero-card-label {
+    position: absolute; top: -13px; left: 20px;
+    background: var(--bg-card2); border: 1px solid var(--border);
+    border-radius: 999px; font-size: 11px; font-weight: 700;
+    color: var(--rose); padding: 4px 14px; letter-spacing: 0.06em;
+  }
+
+  .co-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .co-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 12px; border-radius: 12px;
+    transition: background 0.2s; cursor: pointer;
+  }
+  .co-item:hover { background: rgba(255,255,255,0.05); }
+  .co-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .co-name { font-size: 13px; font-weight: 600; color: var(--text-sub); flex: 1; }
+  .co-tag {
+    font-size: 10px; font-weight: 700; color: var(--text-muted);
+    background: rgba(255,255,255,0.05);
+    padding: 2px 8px; border-radius: 999px;
+  }
+
+  /* ── NAV ── */
+  .quicknav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,22,40,0.82);
+    backdrop-filter: saturate(180%) blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+  }
+  .quicknav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; overflow-x: auto;
+    scrollbar-width: none; height: 54px;
+  }
+  .quicknav-inner::-webkit-scrollbar { display: none; }
+  .nav-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 16px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; color: var(--text-muted);
+    white-space: nowrap; text-decoration: none;
+    transition: all 0.2s; cursor: pointer; border: none; background: none;
+  }
+  .nav-chip:hover { background: rgba(251,113,133,0.15); color: var(--rose); }
+  .nav-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+  /* ── SECTION ── */
+  .section-wrap { max-width: 1200px; margin: 0 auto; padding: 72px 32px 48px; }
+
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11.5px; font-weight: 800; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--rose); margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(22px,3vw,34px);
+    font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px;
+  }
+  .section-subtitle { font-size: 15px; color: var(--text-muted); margin-bottom: 40px; }
+
+  /* ── STAT GRID ── */
+  .stat-grid {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 40px;
+  }
+  .stat-card {
+    background: var(--bg-soft); border: 1px solid var(--border);
+    border-radius: 16px; padding: 22px 20px; text-align: center;
+  }
+  .stat-card.c-rose   { border-color: rgba(251,113,133,0.3); }
+  .stat-card.c-amber  { border-color: rgba(255,178,63,0.3); }
+  .stat-card.c-mint   { border-color: rgba(94,221,184,0.3); }
+  .stat-card.c-purple { border-color: rgba(164,140,255,0.3); }
+
+  .stat-val {
+    font-size: 28px; font-weight: 800;
+    letter-spacing: -0.05em; line-height: 1; margin-bottom: 6px;
+  }
+  .c-rose .stat-val   { color: var(--rose); }
+  .c-amber .stat-val  { color: var(--amber); }
+  .c-mint .stat-val   { color: var(--mint); }
+  .c-purple .stat-val { color: var(--purple); }
+  .stat-label { font-size: 12px; font-weight: 600; color: var(--text-muted); line-height: 1.4; }
+
+  /* ── BUYER ENTRIES ── */
+  .buyer-entry {
+    display: grid; grid-template-columns: 160px 1fr;
+    gap: 0 48px; margin-bottom: 4px;
+  }
+  .entry-num-col {
+    position: sticky; top: 72px; align-self: start;
+    padding-top: 28px; padding-bottom: 28px;
+  }
+  .entry-num {
+    font-size: 48px; font-weight: 800;
+    line-height: 1; letter-spacing: -0.05em;
+  }
+  .entry-type-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 10px; padding: 4px 10px; border-radius: 999px;
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em;
+  }
+  .badge-t1       { background: rgba(255,178,63,0.15); color: var(--amber); }
+  .badge-t2       { background: rgba(59,143,255,0.15); color: var(--accent-light); }
+  .badge-domestic { background: rgba(255,133,133,0.15); color: var(--coral); }
+  .badge-pe       { background: rgba(164,140,255,0.15); color: var(--purple); }
+
+  .entry-card {
+    padding: 28px; background: var(--bg-soft); border: 1px solid var(--border);
+    border-radius: var(--radius); margin-bottom: 12px;
+  }
+  .entry-card.accent-rose {
+    background: linear-gradient(135deg,rgba(251,113,133,0.07) 0%,rgba(255,255,255,0.01) 100%);
+    border-color: rgba(251,113,133,0.28); border-left: 3px solid var(--rose);
+  }
+  .entry-card.accent-amber {
+    background: linear-gradient(135deg,rgba(255,178,63,0.06) 0%,rgba(255,255,255,0.01) 100%);
+    border-color: rgba(255,178,63,0.25); border-left: 3px solid var(--amber);
+  }
+  .entry-card.accent-mint {
+    background: linear-gradient(135deg,rgba(94,221,184,0.06) 0%,rgba(255,255,255,0.01) 100%);
+    border-color: rgba(94,221,184,0.25); border-left: 3px solid var(--mint);
+  }
+  .entry-card.accent-blue {
+    background: linear-gradient(135deg,rgba(59,143,255,0.06) 0%,rgba(255,255,255,0.01) 100%);
+    border-color: rgba(59,143,255,0.25); border-left: 3px solid var(--accent-light);
+  }
+  .entry-card.accent-coral {
+    background: linear-gradient(135deg,rgba(255,133,133,0.06) 0%,rgba(255,255,255,0.01) 100%);
+    border-color: rgba(255,133,133,0.25); border-left: 3px solid var(--coral);
+  }
+  .entry-card.accent-purple {
+    background: linear-gradient(135deg,rgba(164,140,255,0.06) 0%,rgba(255,255,255,0.01) 100%);
+    border-color: rgba(164,140,255,0.25); border-left: 3px solid var(--purple);
+  }
+
+  .co-header {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    margin-bottom: 6px; flex-wrap: wrap; gap: 8px;
+  }
+  .co-title-kr { font-size: 21px; font-weight: 800; letter-spacing: -0.02em; }
+  .co-aum {
+    font-size: 11px; font-weight: 700;
+    background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+    padding: 4px 12px; border-radius: 999px; color: var(--text-muted); white-space: nowrap;
+  }
+  .co-subtitle { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 14px; }
+  .co-desc { font-size: 14.5px; color: var(--text-sub); line-height: 1.85; margin-bottom: 20px; }
+
+  .info-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-bottom: 18px; }
+  .info-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+  .info-table tr:last-child td { border-bottom: none; }
+  .info-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .info-key {
+    font-size: 11px; font-weight: 800; color: var(--text-muted);
+    letter-spacing: 0.07em; text-transform: uppercase;
+    white-space: nowrap; width: 110px; padding-top: 11px;
+  }
+  .info-val { color: var(--text-sub); }
+  .info-val strong { color: var(--text); }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .tag { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
+  .jt-rose   { background: rgba(251,113,133,0.15); color: var(--rose); }
+  .jt-amber  { background: rgba(255,178,63,0.15); color: var(--amber); }
+  .jt-mint   { background: rgba(94,221,184,0.15); color: var(--mint); }
+  .jt-blue   { background: rgba(59,143,255,0.15); color: var(--accent-light); }
+  .jt-purple { background: rgba(164,140,255,0.15); color: var(--purple); }
+  .jt-coral  { background: rgba(255,133,133,0.15); color: var(--coral); }
+  .jt-gray   { background: rgba(255,255,255,0.07); color: var(--text-muted); }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 18px; }
+  .kpi-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px; text-align: center;
+  }
+  .kpi-val { font-size: 22px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 5px; }
+  .kpi-label { font-size: 11.5px; color: var(--text-muted); font-weight: 600; line-height: 1.4; }
+
+  .entry-connector {
+    display: flex; align-items: center; gap: 16px;
+    padding: 10px 0; color: var(--text-muted);
+    margin: 4px 0 4px 208px;
+  }
+  .connector-line { flex: 1; height: 1px; background: var(--border); }
+  .connector-icon {
+    width: 32px; height: 32px; background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0;
+  }
+  .tier-divider {
+    display: flex; align-items: center; gap: 16px;
+    padding: 14px 0; margin: 8px 0 8px 208px;
+  }
+
+  /* ── TABLE ── */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .data-table thead tr { border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .data-table thead th {
+    padding: 10px 14px; text-align: left;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .data-table tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.15s;
+  }
+  .data-table tbody tr:hover { background: rgba(255,255,255,0.025); }
+  .data-table tbody tr:last-child { border-bottom: none; }
+  .data-table tbody td { padding: 13px 14px; vertical-align: middle; color: var(--text-sub); }
+
+  .fit-badge { font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+  .fit-A  { background: rgba(251,113,133,0.2); color: var(--rose); }
+  .fit-Ap { background: rgba(255,178,63,0.2); color: var(--amber); }
+  .fit-B  { background: rgba(59,143,255,0.2); color: var(--accent-light); }
+  .fit-C  { background: rgba(255,255,255,0.08); color: var(--text-muted); }
+
+  /* ── PHASE GRID ── */
+  .phase-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; margin-top: 32px; }
+  .phase-card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .phase-card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .phase-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .phase-title { font-size: 17px; font-weight: 800; }
+  .phase-desc { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+  .outreach-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .outreach-item {
+    display: flex; gap: 12px; align-items: flex-start;
+    background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 14px;
+  }
+  .outreach-rank { font-size: 13px; font-weight: 800; min-width: 24px; text-align: center; line-height: 1.6; }
+  .outreach-body { flex: 1; }
+  .outreach-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+  .outreach-strategy { font-size: 12.5px; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── DEAL STRUCTURE ── */
+  .struct-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; margin-bottom: 32px; }
+  .struct-card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .struct-icon { font-size: 24px; margin-bottom: 12px; }
+  .struct-name { font-size: 15px; font-weight: 800; margin-bottom: 8px; }
+  .struct-desc { font-size: 13.5px; color: var(--text-sub); line-height: 1.7; margin-bottom: 12px; }
+  .struct-buyers { font-size: 12px; font-weight: 700; color: var(--rose); margin-bottom: 6px; }
+  .struct-note { font-size: 11.5px; color: var(--amber); }
+
+  /* ── CONTEXT ── */
+  .context-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(250px,1fr)); gap: 12px; margin-bottom: 32px; }
+  .ctx-card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  .ctx-label { font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .ctx-val { font-size: 13.5px; font-weight: 600; color: var(--text); line-height: 1.5; }
+
+  /* ── DISCLAIMER / FOOTER ── */
+  .warning-banner { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .warning-inner {
+    background: rgba(255,178,63,0.06); border: 1px solid rgba(255,178,63,0.25);
+    border-left: 3px solid var(--amber);
+    border-radius: 12px; padding: 14px 20px;
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 40px;
+  }
+  .warning-inner strong { color: var(--amber); }
+
+  footer {
+    max-width: 1200px; margin: 0 auto;
+    padding: 40px 32px 60px; border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  }
+  .footer-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  .footer-text strong { color: var(--text-sub); }
+  .footer-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11.5px; font-weight: 700; color: var(--text-muted);
+    background: var(--bg-card); border: 1px solid var(--border);
+    padding: 6px 14px; border-radius: 999px;
+  }
+  .stars { color: var(--amber); letter-spacing: 1px; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .stat-grid { grid-template-columns: repeat(2,1fr); }
+    .buyer-entry { grid-template-columns: 1fr; }
+    .entry-num-col { position: static; padding: 0; display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .phase-grid { grid-template-columns: 1fr; }
+    .kpi-row { grid-template-columns: repeat(2,1fr); }
+    .entry-connector, .tier-divider { margin-left: 0; }
+    .struct-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .hero-inner { padding: 80px 20px 60px; }
+    .section-wrap, .warning-banner { padding-left: 20px; padding-right: 20px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stat-row { gap: 8px; }
+    .hero-stat { padding: 12px 14px; }
+    .hero-stat-num { font-size: 20px; }
+    .quicknav { padding: 0 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        기업 M&A 바이어 분석 리포트 · 2025
+      </div>
+      <h1 class="hero-title">
+        K-Beauty 스킨케어<br><em>Buyer Universe</em>
+      </h1>
+      <p class="hero-subtitle">
+        토너·선크림 중심 고성장 스킨케어 제조·유통 전문기업 —<br>
+        글로벌 전략적 투자자 및 재무적 스폰서 유니버스를 분류하고<br>
+        아웃리치 우선순위와 딜 구조 옵션을 정리했습니다.
+      </p>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="hero-stat-num" style="color:var(--rose)">5,000억+</div>
+          <div class="hero-stat-label">예상 거래 규모<br><span style="font-size:10px;opacity:0.7">KRW 기준</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" style="color:var(--amber)">2,000억</div>
+          <div class="hero-stat-label">매출<br><span style="font-size:10px;opacity:0.7">고성장 트랙레코드</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" style="color:var(--mint)">900억</div>
+          <div class="hero-stat-label">EBITDA<br><span style="font-size:10px;opacity:0.7">마진 45%</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" style="color:var(--purple)">5.6x+</div>
+          <div class="hero-stat-label">EV/EBITDA<br><span style="font-size:10px;opacity:0.7">프리미엄 멀티플 기대</span></div>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">기준일</span>
+          <span class="meta-value">2025. 5.</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">섹터</span>
+          <span class="meta-value">K-뷰티 스킨케어</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">제품군</span>
+          <span class="meta-value">토너 · 선크림 · 스킨케어 전반</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">작성</span>
+          <span class="meta-value">Jin Woo Choi</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">대상</span>
+          <span class="meta-value">삼정KPMG</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <span class="hero-card-label">바이어 유니버스 요약</span>
+      <ul class="co-list">
+        <li class="co-item" onclick="document.getElementById('strategic').scrollIntoView({behavior:'smooth'})">
+          <span class="co-dot" style="background:var(--rose)"></span>
+          <span class="co-name">L'Oréal</span>
+          <span class="co-tag">전략 Tier 1 ★★★★★</span>
+        </li>
+        <li class="co-item" onclick="document.getElementById('strategic').scrollIntoView({behavior:'smooth'})">
+          <span class="co-dot" style="background:var(--rose)"></span>
+          <span class="co-name">Unilever</span>
+          <span class="co-tag">전략 Tier 1 ★★★★★</span>
+        </li>
+        <li class="co-item" onclick="document.getElementById('strategic').scrollIntoView({behavior:'smooth'})">
+          <span class="co-dot" style="background:var(--amber)"></span>
+          <span class="co-name">Shiseido</span>
+          <span class="co-tag">전략 Tier 1 ★★★★★</span>
+        </li>
+        <li class="co-item" onclick="document.getElementById('strategic').scrollIntoView({behavior:'smooth'})">
+          <span class="co-dot" style="background:var(--amber)"></span>
+          <span class="co-name">Beiersdorf</span>
+          <span class="co-tag">전략 Tier 1 ★★★★☆</span>
+        </li>
+        <li class="co-item" onclick="document.getElementById('sponsors').scrollIntoView({behavior:'smooth'})">
+          <span class="co-dot" style="background:var(--purple)"></span>
+          <span class="co-name">L Catterton</span>
+          <span class="co-tag">PE Tier 1 ★★★★★</span>
+        </li>
+        <li class="co-item" onclick="document.getElementById('sponsors').scrollIntoView({behavior:'smooth'})">
+          <span class="co-dot" style="background:var(--purple)"></span>
+          <span class="co-name">Bain Capital</span>
+          <span class="co-tag">PE Tier 1 ★★★★★</span>
+        </li>
+        <li class="co-item" onclick="document.getElementById('sponsors').scrollIntoView({behavior:'smooth'})">
+          <span class="co-dot" style="background:var(--purple)"></span>
+          <span class="co-name">Blackstone</span>
+          <span class="co-tag">PE Tier 1 ★★★★☆</span>
+        </li>
+        <li class="co-item" onclick="document.getElementById('structure').scrollIntoView({behavior:'smooth'})">
+          <span class="co-dot" style="background:var(--text-muted)"></span>
+          <span class="co-name">딜 구조 옵션</span>
+          <span class="co-tag">4가지</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NAV ══ -->
+<nav class="quicknav">
+  <div class="quicknav-inner">
+    <a class="nav-chip" href="#overview"><span class="dot"></span> 딜 개요</a>
+    <a class="nav-chip" href="#strategic"><span class="dot" style="background:var(--rose)"></span> 전략적 투자자</a>
+    <a class="nav-chip" href="#sponsors"><span class="dot" style="background:var(--purple)"></span> 재무적 스폰서</a>
+    <a class="nav-chip" href="#domestic"><span class="dot" style="background:var(--coral)"></span> 국내 전략</a>
+    <a class="nav-chip" href="#outreach"><span class="dot" style="background:var(--mint)"></span> 아웃리치</a>
+    <a class="nav-chip" href="#structure"><span class="dot" style="background:var(--text-muted)"></span> 딜 구조</a>
+    <a class="nav-chip" href="#context"><span class="dot" style="background:var(--accent-light)"></span> 시장 맥락</a>
+  </div>
+</nav>
+
+<!-- ══ OVERVIEW ══ -->
+<section class="section-wrap" id="overview">
+  <div class="section-eyebrow">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    딜 개요
+  </div>
+  <h2 class="section-title">고마진 K-뷰티 — 핵심 투자 고려사항</h2>
+  <p class="section-subtitle">45% EBITDA 마진은 프리미엄 브랜드 IP + 애셋라이트 ODM 구조를 강력히 시사 — 글로벌 전략적 바이어의 프리미엄 멀티플 정당화 핵심 근거</p>
+
+  <div class="stat-grid">
+    <div class="stat-card c-rose">
+      <div class="stat-val">45%</div>
+      <div class="stat-label">EBITDA 마진<br>글로벌 K-뷰티 피어 최상위</div>
+    </div>
+    <div class="stat-card c-amber">
+      <div class="stat-val">고성장</div>
+      <div class="stat-label">매출 성장 트랙레코드<br>글로벌 온라인 채널 확장</div>
+    </div>
+    <div class="stat-card c-mint">
+      <div class="stat-val">USD 15B</div>
+      <div class="stat-label">K-뷰티 글로벌 시장<br>2030 USD 30B+ 전망</div>
+    </div>
+    <div class="stat-card c-purple">
+      <div class="stat-val">2025</div>
+      <div class="stat-label">K-뷰티 M&A 피크<br>연간 USD 1.8B+ 거래</div>
+    </div>
+  </div>
+
+  <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:start;">
+    <div>
+      <div style="font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--mint);margin-bottom:14px;">Positive — 투자 매력</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-sub);"><span style="width:6px;height:6px;border-radius:50%;background:var(--mint);flex-shrink:0;display:inline-block;margin-top:7px"></span>45% EBITDA 마진 — 강력한 브랜드 프리미엄 + 애셋라이트 구조 증거</li>
+        <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-sub);"><span style="width:6px;height:6px;border-radius:50%;background:var(--mint);flex-shrink:0;display:inline-block;margin-top:7px"></span>선크림·토너 — 글로벌 K-뷰티 수요 급증 카테고리 정면 타격</li>
+        <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-sub);"><span style="width:6px;height:6px;border-radius:50%;background:var(--mint);flex-shrink:0;display:inline-block;margin-top:7px"></span>제조 + 유통 통합 — 공급망 컨트롤 + 마진 방어력 동시 보유</li>
+        <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-sub);"><span style="width:6px;height:6px;border-radius:50%;background:var(--mint);flex-shrink:0;display:inline-block;margin-top:7px"></span>글로벌 전략적 바이어 K-뷰티 M&A 최고 관심 시점 — 2025년 역대 최고 거래량</li>
+      </ul>
+    </div>
+    <div style="text-align:center;font-size:22px;color:var(--rose);opacity:0.5;padding-top:16px;">⟷</div>
+    <div>
+      <div style="font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;">Risk / Watch — 주의 사항</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+        <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-sub);"><span style="width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0;display:inline-block;margin-top:7px"></span>K-뷰티 트렌드 의존성 — 유행 사이클 리스크, 브랜드 지속성 검증 필요</li>
+        <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-sub);"><span style="width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0;display:inline-block;margin-top:7px"></span>창업자 의존성 — 핵심 인력 이탈 시 브랜드 가치·성장 둔화 가능</li>
+        <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-sub);"><span style="width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0;display:inline-block;margin-top:7px"></span>멀티플 기대치 격차 — 매도자 고멀티플 vs. 바이어 성장 지속성 검증 요구</li>
+        <li style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-sub);"><span style="width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0;display:inline-block;margin-top:7px"></span>L'Oréal 독점금지 — 2024년 Dr.G 인수 직후, 추가 동일 섹터 딜 규제 리스크</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STRATEGIC ══ -->
+<div class="section-wrap" id="strategic" style="padding-bottom:0">
+  <div class="section-eyebrow">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    전략적 투자자
+  </div>
+  <h2 class="section-title">글로벌 뷰티 대기업 — K-뷰티 M&A 헝거 최고조</h2>
+  <p class="section-subtitle">고마진 스킨케어 브랜드 인수로 아시아 포트폴리오 갭을 채우려는 글로벌 플레이어 최우선</p>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:24px 32px 80px;">
+
+  <!-- L'Oréal -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--rose)">01</div>
+      <div class="entry-type-badge badge-t1">Tier 1</div>
+    </div>
+    <div class="entry-card accent-rose">
+      <div class="co-header">
+        <div class="co-title-kr">L'Oréal</div>
+        <span class="co-aum">글로벌 뷰티 1위 · EUR 41.2B 매출 · <span class="stars">★★★★★</span></span>
+      </div>
+      <div class="co-subtitle">L'Oréal S.A. — 가장 적극적인 K-뷰티 인수자</div>
+      <p class="co-desc">
+        2024년 12월 고운세상화장품(Dr.G)을 스위스 Migros로부터 인수하며 K-뷰티 스킨케어에 공식 진입.
+        피부과학 기반 토너·선크림 포트폴리오는 L'Oréal의 La Roche-Posay, CeraVe 계열과 시너지가 명확함.
+        아시아 더마 스킨케어 강화라는 장기 전략 방향과 완벽 부합.
+        단, Dr.G 딜 이후 동일 카테고리 반복 인수에 대한 EU/KFTC 독점심사 리스크 존재.
+      </p>
+      <table class="info-table">
+        <tr><td class="info-key">관심 논리</td><td class="info-val"><strong>K-뷰티 스킨케어 포트폴리오 확대</strong> — 피부과학·더마 라인 강화</td></tr>
+        <tr><td class="info-key">최근 딜</td><td class="info-val">Dr.G / 고운세상화장품 인수 (2024. 12, Migros로부터)</td></tr>
+        <tr><td class="info-key">접근 전략</td><td class="info-val">Corp Dev APAC 직접 접촉 + 국내 FA 채널 병행</td></tr>
+        <tr><td class="info-key">주의사항</td><td class="info-val">동일 섹터 연속 인수 → 공정거래 심사 강화 가능</td></tr>
+      </table>
+      <div class="tag-row">
+        <span class="tag jt-rose">글로벌 뷰티 1위</span>
+        <span class="tag jt-rose">K-뷰티 기진입</span>
+        <span class="tag jt-amber">독점심사 주의</span>
+        <span class="tag jt-gray">Priority A</span>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-val" style="color:var(--rose)">★★★★★</div><div class="kpi-label">전략 적합도</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:var(--amber)">Phase 1</div><div class="kpi-label">아웃리치 단계</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:var(--accent-light)">#1</div><div class="kpi-label">전체 우선순위</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="entry-connector">
+    <div class="connector-line"></div>
+    <div class="connector-icon">↓</div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- Unilever -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--rose)">02</div>
+      <div class="entry-type-badge badge-t1">Tier 1</div>
+    </div>
+    <div class="entry-card accent-rose">
+      <div class="co-header">
+        <div class="co-title-kr">Unilever</div>
+        <span class="co-aum">글로벌 FMCG 2위 · EUR 60B 매출 · <span class="stars">★★★★★</span></span>
+      </div>
+      <div class="co-subtitle">Unilever PLC — 검증된 K-뷰티 대형 바이어</div>
+      <p class="co-desc">
+        2017년 Carver Korea(AHC 브랜드)를 약 USD 2.7B에 인수하며 K-뷰티 최대 딜 플레이어로 등극.
+        이후 K-뷰티 포트폴리오 재강화 필요성이 내부에서 지속 제기 중.
+        선크림 카테고리는 Unilever의 글로벌 스킨케어 포트폴리오(Pond's, Vaseline, Simple)와 즉각 시너지 발생.
+        Bain Capital이 Carver Korea를 Unilever에 7배 엑싯한 플레이북의 재현 가능성 상당히 높음.
+      </p>
+      <table class="info-table">
+        <tr><td class="info-key">관심 논리</td><td class="info-val"><strong>K-뷰티 포트폴리오 재강화</strong> — AHC 이후 공백 채우기</td></tr>
+        <tr><td class="info-key">최근 딜</td><td class="info-val">Carver Korea(AHC) 인수 (2017, USD 2.7B) — K-뷰티 역대 최대</td></tr>
+        <tr><td class="info-key">접근 전략</td><td class="info-val">런던/싱가포르 M&A팀 직접 접촉 + 국내 뷰티 FA 채널</td></tr>
+        <tr><td class="info-key">구조 선호</td><td class="info-val">100% 지분 인수 또는 경영권 지분 80%+ 취득</td></tr>
+      </table>
+      <div class="tag-row">
+        <span class="tag jt-rose">AHC 인수 전례</span>
+        <span class="tag jt-rose">K-뷰티 검증 바이어</span>
+        <span class="tag jt-gray">Priority A</span>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-val" style="color:var(--rose)">★★★★★</div><div class="kpi-label">전략 적합도</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:var(--amber)">Phase 1</div><div class="kpi-label">아웃리치 단계</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:var(--accent-light)">#2</div><div class="kpi-label">전체 우선순위</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="entry-connector">
+    <div class="connector-line"></div>
+    <div class="connector-icon">↓</div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- Shiseido -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--amber)">03</div>
+      <div class="entry-type-badge badge-t1">Tier 1</div>
+    </div>
+    <div class="entry-card accent-amber">
+      <div class="co-header">
+        <div class="co-title-kr">Shiseido</div>
+        <span class="co-aum">일본 뷰티 1위 · JPY 969B 매출 · <span class="stars">★★★★★</span></span>
+      </div>
+      <div class="co-subtitle">Shiseido Co., Ltd. — 아시아 스킨케어 최강자, 한국 공백</div>
+      <p class="co-desc">
+        중국·일본 스킨케어에서 압도적 존재감을 보유하나 한국 시장 브랜드는 부재.
+        K-뷰티 선크림·토너 포뮬레이션 기술력은 Shiseido가 자체 개발에 10년 이상 걸릴 영역.
+        "Win in Asia" 전략의 마지막 퍼즐은 K-뷰티 브랜드 획득.
+        NARS, bareMinerals 등 서구 브랜드 매각 후 아시아 집중 재편 중 — 타이밍 최적.
+      </p>
+      <table class="info-table">
+        <tr><td class="info-key">관심 논리</td><td class="info-val"><strong>한국 스킨케어 브랜드 공백 해소</strong> — Win in Asia 전략 완성</td></tr>
+        <tr><td class="info-key">포트폴리오 재편</td><td class="info-val">NARS, bareMinerals 매각 후 아시아 집중 — 자금력 확보</td></tr>
+        <tr><td class="info-key">접근 전략</td><td class="info-val">도쿄 Corp Dev 직접 접촉 — 한국 법인 경유 가능</td></tr>
+        <tr><td class="info-key">구조 선호</td><td class="info-val">100% 또는 지배지분 취득 (창업자 전환기 잔류 가능)</td></tr>
+      </table>
+      <div class="tag-row">
+        <span class="tag jt-amber">한국 공백 보유</span>
+        <span class="tag jt-amber">아시아 집중 재편</span>
+        <span class="tag jt-gray">Priority A</span>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-val" style="color:var(--amber)">★★★★★</div><div class="kpi-label">전략 적합도</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:var(--amber)">Phase 1</div><div class="kpi-label">아웃리치 단계</div></div>
+        <div class="kpi-card"><div class="kpi-val" style="color:var(--mint)">#3</div><div class="kpi-label">전체 우선순위</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="entry-connector">
+    <div class="connector-line"></div>
+    <div class="connector-icon">↓</div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- Beiersdorf -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--amber)">04</div>
+      <div class="entry-type-badge badge-t1">Tier 1</div>
+    </div>
+    <div class="entry-card accent-amber">
+      <div class="co-header">
+        <div class="co-title-kr">Beiersdorf</div>
+        <span class="co-aum">NIVEA · Eucerin · La Prairie · EUR 9.7B 매출 · <span class="stars">★★★★☆</span></span>
+      </div>
+      <div class="co-subtitle">Beiersdorf AG — 선케어 + 더마 스킨케어 전문</div>
+      <p class="co-desc">
+        NIVEA Sun, Eucerin Sun 계열로 글로벌 선케어 점유율 1위.
+        K-뷰티 선크림의 초경량·고흡수 포뮬레이션은 Beiersdorf가 독자 개발하기 가장 어려운 영역.
+        아시아 시장 점유율 확대를 위한 한국 브랜드 인수는 중장기 전략 과제로 명시.
+        EUR 1.5B 이하 딜은 Beiersdorf 기준 소형 — 의사결정 속도 빠름.
+      </p>
+      <table class="info-table">
+        <tr><td class="info-key">관심 논리</td><td class="info-val">K-뷰티 선크림 포뮬레이션 기술 획득, APAC 점유율 확대</td></tr>
+        <tr><td class="info-key">전략 적합</td><td class="info-val">Eucerin 더마 계열 + K-뷰티 선크림 시너지 강력</td></tr>
+        <tr><td class="info-key">접근 전략</td><td class="info-val">함부르크 Corp Dev 직접 + 프랑크푸르트 IB 채널</td></tr>
+      </table>
+      <div class="tag-row">
+        <span class="tag jt-amber">글로벌 선케어 1위</span>
+        <span class="tag jt-amber">더마 포트폴리오</span>
+        <span class="tag jt-gray">Priority A</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="entry-connector">
+    <div class="connector-line"></div>
+    <div class="connector-icon">↓</div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- Estée Lauder -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--amber)">05</div>
+      <div class="entry-type-badge badge-t1">Tier 1</div>
+    </div>
+    <div class="entry-card accent-amber">
+      <div class="co-header">
+        <div class="co-title-kr">Estée Lauder Companies</div>
+        <span class="co-aum">NYSE: EL · USD 15.6B 매출 · <span class="stars">★★★★☆</span></span>
+      </div>
+      <div class="co-subtitle">ELC — DECIEM(The Ordinary) 인수 후 고기능 스킨케어 집중</div>
+      <p class="co-desc">
+        2024년 DECIEM(The Ordinary) 완전 인수로 고기능 스킨케어 포트폴리오 대폭 강화.
+        K-뷰티 토너 카테고리는 Clinique, Origins 계열의 자연스러운 확장선상.
+        아시아 매출 비중 확대 전략 + Clinique Asia 리포지셔닝 맥락에서 K-뷰티 브랜드 인수 논리 명확.
+        최근 주가 부진으로 주주 압박 증가 — 성장 스토리 필요.
+      </p>
+      <table class="info-table">
+        <tr><td class="info-key">관심 논리</td><td class="info-val">APAC 성장 브랜드 확보, Clinique/Origins 보완</td></tr>
+        <tr><td class="info-key">최근 딜</td><td class="info-val">DECIEM 완전 인수 (2024. 5, ~USD 860M)</td></tr>
+        <tr><td class="info-key">접근 전략</td><td class="info-val">뉴욕 Corp Dev + 서울 ELC 코리아 채널 활용</td></tr>
+      </table>
+      <div class="tag-row">
+        <span class="tag jt-amber">고기능 스킨케어 집중</span>
+        <span class="tag jt-coral">주가 압박 → 성장 스토리 니즈</span>
+        <span class="tag jt-gray">Priority A</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tier-divider">
+    <div class="connector-line"></div>
+    <span style="white-space:nowrap;padding:0 12px;font-size:11px;color:var(--accent-light)">Tier 2 — 2차 접촉 (Good Fit, Less Obvious)</span>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- Goodai Global -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--accent-light)">06</div>
+      <div class="entry-type-badge badge-t2">Tier 2</div>
+    </div>
+    <div class="entry-card accent-blue">
+      <div class="co-header">
+        <div class="co-title-kr">Goodai Global</div>
+        <span class="co-aum">K-뷰티 유니콘 · IPO 준비 · <span style="color:var(--accent-light)">★★★★☆</span></span>
+      </div>
+      <div class="co-subtitle">Goodai Global Inc. — K-뷰티 플랫폼 구축 최적 인수자</div>
+      <p class="co-desc">
+        2025년 Seorin(약 KRW 600B 인수), Tirtir, Craver 등 공격적 M&A로 K-뷰티 플랫폼 구축 중.
+        IMM Investment 등 국내 PE 6곳이 KRW 800B 투자 — 추가 인수를 위한 드라이 파우더 충분.
+        스킨케어 전문 브랜드 포트폴리오가 있다면 IPO 전 밸류에이션 극대화에 직결.
+      </p>
+      <div class="tag-row">
+        <span class="tag jt-blue">K-뷰티 플랫폼</span>
+        <span class="tag jt-blue">IPO 준비</span>
+        <span class="tag jt-blue">IMM 등 PE 800B 투자</span>
+        <span class="tag jt-gray">Priority B</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="entry-connector">
+    <div class="connector-line"></div>
+    <div class="connector-icon">↓</div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- Kao -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--accent-light)">07</div>
+      <div class="entry-type-badge badge-t2">Tier 2</div>
+    </div>
+    <div class="entry-card accent-blue">
+      <div class="co-header">
+        <div class="co-title-kr">Kao Corporation</div>
+        <span class="co-aum">일본 FMCG · Bioré · Curél · JPY 1.59T 매출 · <span style="color:var(--accent-light)">★★★★☆</span></span>
+      </div>
+      <div class="co-subtitle">Kao Corporation — 일본 스킨케어 강자, 한국 브랜드 공백</div>
+      <p class="co-desc">
+        Bioré 선케어 + Curél 더마 스킨케어로 일본 시장 지배. 한국 소비자가 열광하는 K-뷰티 포뮬레이션을
+        자체 보유하지 못함. 아시아 스킨케어 점유율 확대 전략에서 한국 브랜드 인수가 최단 경로.
+      </p>
+      <div class="tag-row">
+        <span class="tag jt-blue">일본 선케어 강자</span>
+        <span class="tag jt-blue">Curél 더마 계열</span>
+        <span class="tag jt-gray">Priority B</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="entry-connector">
+    <div class="connector-line"></div>
+    <div class="connector-icon">↓</div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- Kenvue -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--accent-light)">08</div>
+      <div class="entry-type-badge badge-t2">Tier 2</div>
+    </div>
+    <div class="entry-card accent-blue">
+      <div class="co-header">
+        <div class="co-title-kr">Kenvue</div>
+        <span class="co-aum">NYSE: KVUE · Neutrogena · Aveeno · USD 15.4B 매출 · <span style="color:var(--accent-light)">★★★☆☆</span></span>
+      </div>
+      <div class="co-subtitle">Kenvue Inc. — J&J 스핀오프 소비재·스킨케어 전문</div>
+      <p class="co-desc">
+        Neutrogena 선케어, Aveeno 스킨케어로 대중 스킨케어 지배. 프리미엄 K-뷰티 브랜드 인수는
+        Neutrogena의 아시아 프리미엄화 전략에 부합. 2023년 J&J 스핀오프 이후 독자적 M&A 전략 수립 중.
+      </p>
+      <div class="tag-row">
+        <span class="tag jt-blue">Neutrogena 선케어</span>
+        <span class="tag jt-blue">스핀오프 후 M&A 전략</span>
+        <span class="tag jt-gray">Priority B</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ SPONSORS ══ -->
+<section class="section-wrap" id="sponsors">
+  <div class="section-eyebrow">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+    재무적 스폰서
+  </div>
+  <h2 class="section-title">뷰티 전문 PE · 글로벌 인프라 펀드</h2>
+  <p class="section-subtitle">K-뷰티 트랙레코드 + 아시아 소비재 투자 역량 우선 — 전략적 바이어 경쟁 입찰 압박 수단으로도 활용</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Sponsor</th>
+        <th>국가</th>
+        <th>펀드 유형</th>
+        <th>K-뷰티 / 뷰티 레퍼런스</th>
+        <th>예상 Ticket</th>
+        <th>활동성</th>
+        <th>Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>L Catterton</strong></td>
+        <td>미국</td>
+        <td>뷰티 전문 PE</td>
+        <td>Kiko Milano, Stripes, Sugar Cosmetics — 글로벌 뷰티 최대 전문 PE, AUM $7B+</td>
+        <td>KRW 5,000억+</td>
+        <td>Active</td>
+        <td><span class="fit-badge fit-A">A</span></td>
+      </tr>
+      <tr>
+        <td><strong>Bain Capital</strong></td>
+        <td>미국</td>
+        <td>글로벌 PE</td>
+        <td>Carver Korea(AHC) → Unilever 7배 엑싯 (2017) — K-뷰티 플레이북 완성</td>
+        <td>KRW 5,000억+</td>
+        <td>Active</td>
+        <td><span class="fit-badge fit-A">A</span></td>
+      </tr>
+      <tr>
+        <td><strong>Blackstone</strong></td>
+        <td>미국</td>
+        <td>글로벌 PE</td>
+        <td>주노(Juno) 프리미엄 헤어케어 KRW 800B 인수 (2025) — K-뷰티 첫 진입</td>
+        <td>KRW 5,000억+</td>
+        <td>Active</td>
+        <td><span class="fit-badge fit-A">A</span></td>
+      </tr>
+      <tr>
+        <td>IMM Investment</td>
+        <td>한국</td>
+        <td>국내 대형 PE</td>
+        <td>Goodai Global 컨소시엄 KRW 800B (2025) — K-뷰티 핵심 투자자</td>
+        <td>KRW 3,000억+</td>
+        <td>Active</td>
+        <td><span class="fit-badge fit-A">A</span></td>
+      </tr>
+      <tr>
+        <td>KKR</td>
+        <td>미국</td>
+        <td>글로벌 PE</td>
+        <td>삼화(Samhwa) 패키징 USD 528M (2025) — K-뷰티 공급망 진입</td>
+        <td>KRW 5,000억+</td>
+        <td>Active</td>
+        <td><span class="fit-badge fit-Ap">A-</span></td>
+      </tr>
+      <tr>
+        <td>VIG Partners</td>
+        <td>한국</td>
+        <td>국내 PE</td>
+        <td>SkinFactory(Kundal) KRW 170B (2020) — K-뷰티 헤어·스킨케어 전문</td>
+        <td>KRW 3,000억+</td>
+        <td>Active</td>
+        <td><span class="fit-badge fit-Ap">A-</span></td>
+      </tr>
+      <tr>
+        <td>Hahn &amp; Company</td>
+        <td>한국</td>
+        <td>국내 PE</td>
+        <td>국내 소비재·유통 대형 딜 다수 — 한국 시장 최상위 이해도</td>
+        <td>KRW 3,000억+</td>
+        <td>Active</td>
+        <td><span class="fit-badge fit-B">B</span></td>
+      </tr>
+      <tr>
+        <td>Affinity Equity Partners</td>
+        <td>홍콩</td>
+        <td>APAC PE</td>
+        <td>한국 소비재 이력, 아시아 뷰티 확장 관심</td>
+        <td>KRW 3,000억+</td>
+        <td>Moderate</td>
+        <td><span class="fit-badge fit-B">B</span></td>
+      </tr>
+      <tr>
+        <td>MBK Partners</td>
+        <td>한국</td>
+        <td>국내 대형 PE</td>
+        <td>국내 소비재 대형 딜 — 뷰티 섹터 직접 레퍼런스는 제한적</td>
+        <td>KRW 5,000억+</td>
+        <td>Moderate</td>
+        <td><span class="fit-badge fit-B">B</span></td>
+      </tr>
+      <tr>
+        <td>Carlyle Group</td>
+        <td>미국</td>
+        <td>글로벌 PE</td>
+        <td>글로벌 소비재 포트폴리오 — 아시아 뷰티 직접 투자 이력 제한</td>
+        <td>KRW 5,000억+</td>
+        <td>Low</td>
+        <td><span class="fit-badge fit-C">C</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══ DOMESTIC ══ -->
+<div class="section-wrap" id="domestic" style="padding-bottom:0">
+  <div class="section-eyebrow">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    국내 전략적 투자자
+  </div>
+  <h2 class="section-title">국내 뷰티 대기업 — 볼트온 인수 또는 경쟁 압박 활용</h2>
+  <p class="section-subtitle">아모레퍼시픽·LG H&amp;H·코스맥스 — 전략적 시너지보다 경쟁 입찰 긴장감 조성 수단으로 활용 권장</p>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:24px 32px 80px;">
+
+  <!-- Amorepacific -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--coral)">01</div>
+      <div class="entry-type-badge badge-domestic">국내 전략</div>
+    </div>
+    <div class="entry-card accent-coral">
+      <div class="co-header">
+        <div class="co-title-kr">아모레퍼시픽</div>
+        <span class="co-aum">국내 뷰티 1위 · KRW 4.1T 매출 · <span style="color:var(--coral)">★★★☆☆</span></span>
+      </div>
+      <div class="co-subtitle">AmorePacific Corporation — 국내 뷰티 최강자</div>
+      <p class="co-desc">
+        2023년 Cosrx 지배지분 인수로 고성장 스킨케어 M&A 역량 검증. 토너·선크림 포트폴리오를
+        보유한 대상회사는 아모레 포트폴리오와 일부 중첩 가능성 존재. KFTC 경쟁제한성 심사 리스크.
+        글로벌 바이어 대비 낮은 멀티플 제시 가능성 — 가격 경쟁력 제한.
+      </p>
+      <table class="info-table">
+        <tr><td class="info-key">관심 논리</td><td class="info-val">고성장 스킨케어 볼트온 — 글로벌 채널 활용</td></tr>
+        <tr><td class="info-key">주의사항</td><td class="info-val"><strong>포트폴리오 중첩 → KFTC 심사</strong>, 글로벌 바이어 대비 멀티플 열위</td></tr>
+      </table>
+      <div class="tag-row">
+        <span class="tag jt-coral">국내 뷰티 1위</span>
+        <span class="tag jt-coral">Cosrx 인수 전례</span>
+        <span class="tag jt-amber">KFTC 심사 주의</span>
+        <span class="tag jt-gray">경쟁 압박 활용</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="entry-connector">
+    <div class="connector-line"></div>
+    <div class="connector-icon">↓</div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- LG H&H -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--coral)">02</div>
+      <div class="entry-type-badge badge-domestic">국내 전략</div>
+    </div>
+    <div class="entry-card accent-coral">
+      <div class="co-header">
+        <div class="co-title-kr">LG생활건강 (LG H&amp;H)</div>
+        <span class="co-aum">국내 뷰티 2위 · KRW 6.8T 매출 · <span style="color:var(--coral)">★★★☆☆</span></span>
+      </div>
+      <div class="co-subtitle">LG Household &amp; Health Care — 후·숨·빌리프 보유</div>
+      <p class="co-desc">
+        중국 의존도 축소 + 글로벌 채널 다각화 전략 추진 중. 해외 직진출 가능한 K-스킨케어 브랜드
+        인수는 전략 방향과 부합. 그러나 최근 실적 부진으로 대형 M&A 실행 여력 제한 가능성.
+      </p>
+      <table class="info-table">
+        <tr><td class="info-key">관심 논리</td><td class="info-val">중국 외 글로벌 스킨케어 채널 확보</td></tr>
+        <tr><td class="info-key">주의사항</td><td class="info-val">최근 실적 부진 → 대형 딜 실행 여력 및 멀티플 지불 의지 확인 필요</td></tr>
+      </table>
+      <div class="tag-row">
+        <span class="tag jt-coral">국내 뷰티 2위</span>
+        <span class="tag jt-coral">글로벌 다각화 전략</span>
+        <span class="tag jt-gray">경쟁 압박 활용</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="entry-connector">
+    <div class="connector-line"></div>
+    <div class="connector-icon">↓</div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- Kolmar Korea -->
+  <div class="buyer-entry">
+    <div class="entry-num-col">
+      <div class="entry-num" style="color:var(--coral)">03</div>
+      <div class="entry-type-badge badge-domestic">국내 전략</div>
+    </div>
+    <div class="entry-card accent-coral">
+      <div class="co-header">
+        <div class="co-title-kr">콜마홀딩스 / 한국콜마</div>
+        <span class="co-aum">ODM 1위 · KRW 2.1T 매출 · <span style="color:var(--coral)">★★★☆☆</span></span>
+      </div>
+      <div class="co-subtitle">Korea Kolmar Holdings — ODM에서 브랜드 사업 수직계열화</div>
+      <p class="co-desc">
+        ODM 공급사가 브랜드 사업 직접 보유하는 수직계열화 논리. 대상회사가 콜마 ODM을 사용 중이라면
+        시너지는 더욱 강력. 단, ODM 기업의 브랜드 M&A는 기존 ODM 고객사(경쟁사)와의 이해충돌 리스크.
+      </p>
+      <div class="tag-row">
+        <span class="tag jt-coral">ODM 수직계열화</span>
+        <span class="tag jt-amber">고객사 이해충돌 리스크</span>
+        <span class="tag jt-gray">Priority C</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ OUTREACH ══ -->
+<section class="section-wrap" id="outreach">
+  <div class="section-eyebrow">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    아웃리치 전략
+  </div>
+  <h2 class="section-title">2단계 아웃리치 — 글로벌 경쟁 입찰 구조 설계</h2>
+  <p class="section-subtitle">서구 전략적 바이어 3곳 동시 타진 → 입찰 긴장감 조성이 최고 멀티플 실현의 핵심</p>
+
+  <div class="phase-grid">
+    <div class="phase-card">
+      <div class="phase-card-head">
+        <div class="phase-icon" style="background:rgba(251,113,133,0.15);">🎯</div>
+        <div>
+          <div class="phase-title">Phase 1 — 전략적 한정 타진</div>
+          <div class="phase-desc">기간: 4~6주 | 극비 유지 | Tier 1 전략 + PE 동시 접촉</div>
+        </div>
+      </div>
+      <ul class="outreach-list">
+        <li class="outreach-item">
+          <div class="outreach-rank" style="color:var(--rose)">1</div>
+          <div class="outreach-body">
+            <div class="outreach-name">L'Oréal Corp Dev APAC</div>
+            <div class="outreach-strategy">싱가포르/파리 동시 접촉 — Dr.G 인수 직후 K-뷰티 확장 모멘텀 활용. 독점심사 리스크 사전 법무 검토 필수</div>
+          </div>
+        </li>
+        <li class="outreach-item">
+          <div class="outreach-rank" style="color:var(--rose)">2</div>
+          <div class="outreach-body">
+            <div class="outreach-name">Unilever M&amp;A London/Singapore</div>
+            <div class="outreach-strategy">AHC 딜 7배 엑싯 경험 주지 + 선크림·토너 포트폴리오 시너지 강조. Carver Korea 플레이북 재현 논거 선제 제시</div>
+          </div>
+        </li>
+        <li class="outreach-item">
+          <div class="outreach-rank" style="color:var(--amber)">3</div>
+          <div class="outreach-body">
+            <div class="outreach-name">Shiseido Corp Dev Tokyo</div>
+            <div class="outreach-strategy">한국 법인 경유 초기 접촉 — NARS/bareMinerals 매각 후 아시아 집중 재원 확보 타이밍 강조</div>
+          </div>
+        </li>
+        <li class="outreach-item">
+          <div class="outreach-rank" style="color:var(--purple)">4</div>
+          <div class="outreach-body">
+            <div class="outreach-name">L Catterton + Bain Capital 동시</div>
+            <div class="outreach-strategy">뷰티 전문 PE 경쟁 입찰 구조 설계 — PE 간 경쟁 + 전략적 바이어 압박으로 멀티플 극대화</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="phase-card">
+      <div class="phase-card-head">
+        <div class="phase-icon" style="background:rgba(59,143,255,0.15);">📢</div>
+        <div>
+          <div class="phase-title">Phase 2 — 광범위 입찰 프로세스</div>
+          <div class="phase-desc">기간: 8~12주 | 티저·IM 배포 | 경쟁 강도 조성</div>
+        </div>
+      </div>
+      <ul class="outreach-list">
+        <li class="outreach-item">
+          <div class="outreach-rank" style="color:var(--accent-light)">5</div>
+          <div class="outreach-body">
+            <div class="outreach-name">Beiersdorf + Estée Lauder</div>
+            <div class="outreach-strategy">함부르크/뉴욕 동시 배포 — 선케어·더마 시너지 IM 별도 제작 권장</div>
+          </div>
+        </li>
+        <li class="outreach-item">
+          <div class="outreach-rank" style="color:var(--accent-light)">6</div>
+          <div class="outreach-body">
+            <div class="outreach-name">Blackstone + KKR + IMM</div>
+            <div class="outreach-strategy">K-뷰티 기진입 PE 동시 접촉 — Blackstone 주노 딜 직후 K-뷰티 추가 딜 헝거 활용</div>
+          </div>
+        </li>
+        <li class="outreach-item">
+          <div class="outreach-rank" style="color:var(--accent-light)">7</div>
+          <div class="outreach-body">
+            <div class="outreach-name">Goodai Global + Kao + Kenvue</div>
+            <div class="outreach-strategy">경쟁 입찰 압박 조성 — Tier 2 동시 접촉으로 가격 긴장감 형성, IOI 마감 압박</div>
+          </div>
+        </li>
+        <li class="outreach-item">
+          <div class="outreach-rank" style="color:var(--accent-light)">8</div>
+          <div class="outreach-body">
+            <div class="outreach-name">아모레퍼시픽 + LG H&amp;H</div>
+            <div class="outreach-strategy">국내 전략사 경쟁 압박 목적 한정 — 실제 우선 낙찰 대상은 글로벌 바이어 권장</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DEAL STRUCTURE ══ -->
+<section class="section-wrap" id="structure">
+  <div class="section-eyebrow">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    딜 구조 옵션
+  </div>
+  <h2 class="section-title">바이어 성격별 최적 딜 구조 매핑</h2>
+  <p class="section-subtitle">창업자 엑싯 니즈 + 바이어 통제권 요구 + 세제 최적화를 동시에 고려</p>
+
+  <div class="struct-grid">
+    <div class="struct-card">
+      <div class="struct-icon">🏆</div>
+      <div class="struct-name">구주 100% 매각 (Clean Exit)</div>
+      <div class="struct-desc">창업자 완전 엑싯. 글로벌 전략적 바이어가 선호. 거래 구조 단순, 속도 빠름. 경영권 프리미엄 최대 실현 가능.</div>
+      <div class="struct-buyers">적합: L'Oréal, Unilever, Shiseido, Beiersdorf</div>
+      <div class="struct-note">⚠ 브랜드·경영 연속성 확보 방안 별도 협의 필요</div>
+    </div>
+    <div class="struct-card">
+      <div class="struct-icon">🤝</div>
+      <div class="struct-name">경영권 지분 + 창업자 Rollover</div>
+      <div class="struct-desc">70-80% 매각 + 창업자 20-30% 잔류. 창업자 브랜드 아이덴티티 유지 + 바이어 리스크 헤지. PE 투자에서 특히 선호.</div>
+      <div class="struct-buyers">적합: L Catterton, Bain Capital, Blackstone, IMM</div>
+      <div class="struct-note">⚠ Rollover 지분 Exit 조건(Put/Call) 사전 협의 필수</div>
+    </div>
+    <div class="struct-card">
+      <div class="struct-icon">🔄</div>
+      <div class="struct-name">PE Secondary + 전략적 매각 옵션</div>
+      <div class="struct-desc">PE 1차 투자 → 3-5년 성장 후 전략적 바이어에 2차 매각. 창업자 부분 엑싯 + 추가 업사이드 참여. 밸류에이션 극대화 구조.</div>
+      <div class="struct-buyers">적합: Bain Capital → Unilever 플레이북 재현</div>
+      <div class="struct-note">⚠ 2차 매각 시 전략적 바이어 Pre-commitment 없으면 리스크</div>
+    </div>
+    <div class="struct-card">
+      <div class="struct-icon">🌐</div>
+      <div class="struct-name">전략적 + PE 컨소시엄 인수</div>
+      <div class="struct-desc">전략적 바이어(Op-Co) + PE(재무 구조)가 공동 인수. 대형 딜 파이낸싱 유연성 확보. GIC + Equinix JV 구조와 유사.</div>
+      <div class="struct-buyers">적합: 외국계 전략사 + IMM / VIG 공동</div>
+      <div class="struct-note">⚠ 거버넌스 복잡성, 의사결정 속도 저하 가능</div>
+    </div>
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>구조</th><th>창업자</th><th>선호 바이어</th><th>장점</th><th>주의사항</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>구주 100% 매각</td><td>완전 엑싯</td><td>L'Oréal, Unilever, Shiseido</td><td>최대 경영권 프리미엄, 단순 구조</td><td>브랜드 연속성 확보 방안 필요</td></tr>
+      <tr><td>경영권 지분 + Rollover</td><td>20-30% 잔류</td><td>L Catterton, Bain Capital</td><td>창업자 동기부여, 리스크 헤지</td><td>Rollover Exit 조건 협의 필수</td></tr>
+      <tr><td>PE Secondary</td><td>부분 엑싯 → 추가 업사이드</td><td>Bain Capital</td><td>밸류에이션 극대화 가능</td><td>2차 Exit 불확실성</td></tr>
+      <tr><td>컨소시엄 인수</td><td>협의 가능</td><td>외국계 전략 + 국내 PE</td><td>파이낸싱 유연성</td><td>거버넌스 복잡, 속도 저하</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══ MARKET CONTEXT ══ -->
+<section class="section-wrap" id="context">
+  <div class="section-eyebrow">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+    시장 맥락
+  </div>
+  <h2 class="section-title">K-뷰티 M&A 시장 — 역대 최고 온도</h2>
+  <p class="section-subtitle">2025년 K-뷰티 M&A USD 1.8B+ 역대 최고 — 멀티플 벤치마크 및 밸류에이션 근거</p>
+
+  <div class="context-grid">
+    <div class="ctx-card">
+      <div class="ctx-label">K-뷰티 M&A 거래량 (2025)</div>
+      <div class="ctx-val">USD 1.8B+ (26건)<br><span style="font-size:12px;color:var(--text-muted)">2024년 USD 1.65B 대비 신기록</span></div>
+    </div>
+    <div class="ctx-card">
+      <div class="ctx-label">비교 트랜잭션 — Carver Korea (AHC)</div>
+      <div class="ctx-val">Unilever → USD 2.7B (2017)<br><span style="font-size:12px;color:var(--text-muted)">Bain Capital 1년 보유 7배 엑싯</span></div>
+    </div>
+    <div class="ctx-card">
+      <div class="ctx-label">비교 트랜잭션 — Seorin</div>
+      <div class="ctx-val">Goodai Global → KRW 600B (2025. 7)<br><span style="font-size:12px;color:var(--text-muted)">국내 K-뷰티 플랫폼 볼트온</span></div>
+    </div>
+    <div class="ctx-card">
+      <div class="ctx-label">비교 트랜잭션 — 주노 (Juno)</div>
+      <div class="ctx-val">Blackstone → KRW 800B (2025)<br><span style="font-size:12px;color:var(--text-muted)">글로벌 PE K-뷰티 진입 신호탄</span></div>
+    </div>
+    <div class="ctx-card">
+      <div class="ctx-label">비교 트랜잭션 — Dr.G</div>
+      <div class="ctx-val">L'Oréal ← Migros (2024. 12)<br><span style="font-size:12px;color:var(--text-muted)">글로벌 전략 1위의 K-더마 진입</span></div>
+    </div>
+    <div class="ctx-card">
+      <div class="ctx-label">예상 EV/EBITDA 밴드</div>
+      <div class="ctx-val">10–15x EBITDA (고성장 프리미엄)<br><span style="font-size:12px;color:var(--text-muted)">= KRW 9,000억 – 1.35조 추정 EV</span></div>
+    </div>
+    <div class="ctx-card">
+      <div class="ctx-label">K-뷰티 글로벌 시장</div>
+      <div class="ctx-val">USD 15B (2024) → USD 30B+ (2030E)<br><span style="font-size:12px;color:var(--text-muted)">선크림·토너 카테고리 최고 성장</span></div>
+    </div>
+    <div class="ctx-card">
+      <div class="ctx-label">딜 포지셔닝 권고</div>
+      <div class="ctx-val">글로벌 전략 1-2곳 + PE 2곳 동시 경쟁<br><span style="font-size:12px;color:var(--text-muted)">단독 협상 배제, 경쟁 입찰 구조 필수</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DISCLAIMER ══ -->
+<div class="warning-banner">
+  <div class="warning-inner">
+    <span style="font-size:16px;flex-shrink:0;">⚠</span>
+    <div>
+      <strong>애널리스트 초안 고지</strong> — 이 문서는 실제 거래 제안 또는 투자 추천이 아닌 분석 목적의 초안입니다.
+      바이어 관심도·멀티플·딜 구조는 공개 정보 기반 추정치이며, 실제 프로세스 진행 시 추가 실사와 법무·세무 검토가 반드시 수반되어야 합니다.
+      대상회사 특정 정보는 의뢰인 제공 데이터를 기반으로 하며 독립 검증을 포함하지 않습니다.
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-text">
+    <strong>K-Beauty 스킨케어 기업 매각 — Buyer Universe 2025</strong><br>
+    기준일: 2025. 5. · 작성: <strong>Jin Woo Choi</strong> · 대상: <strong>삼정KPMG</strong><br>
+    섹터: K-뷰티 스킨케어 (토너·선크림) · 매출 KRW 2,000억 · EBITDA KRW 900억 (45%) · 거래 규모 KRW 5,000억+
+  </div>
+  <div class="footer-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    K-Beauty · M&amp;A · 2025
+  </div>
+</footer>
+
+<script>
+  const chips = document.querySelectorAll('.nav-chip');
+  const secs = document.querySelectorAll('section[id], div[id]');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+    chips.forEach(a => {
+      const active = a.getAttribute('href') === '#' + cur;
+      a.style.background = active ? 'rgba(251,113,133,0.15)' : '';
+      a.style.color = active ? 'var(--rose)' : '';
+    });
+  });
+</script>
+</body>
+</html>
