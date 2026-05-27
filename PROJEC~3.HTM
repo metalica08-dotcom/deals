@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Aurora — Confidential Teaser</title>
+<style>
+/* ══════════════════════════════════════════
+   BASE RESET & FONTS
+══════════════════════════════════════════ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Inter', sans-serif;
+  background: #e8ecf2;
+  color: #1a1a2e;
+  padding: 40px 16px 60px;
+}
+
+/* ══════════════════════════════════════════
+   PDF / PRINT BUTTON (fixed top-right)
+══════════════════════════════════════════ */
+.pdf-btn {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0d1b3e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.22);
+  transition: background 0.18s;
+  letter-spacing: 0.2px;
+  font-family: inherit;
+}
+
+.pdf-btn:hover { background: #1e3a6e; }
+
+.pdf-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════
+   PAGE WRAPPER
+══════════════════════════════════════════ */
+.page-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Page divider label */
+.page-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #8a9ab0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.page-divider::before,
+.page-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #c8cfe0;
+}
+
+/* ══════════════════════════════════════════
+   TEASER CARD (shared)
+══════════════════════════════════════════ */
+.teaser {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.10);
+}
+
+/* ── Header ── */
+.header {
+  background: #0d1b3e;
+  padding: 28px 36px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.project-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #7b9fc7;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.project-name {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.project-sub {
+  font-size: 12.5px;
+  color: #a8c0dc;
+  margin-top: 6px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.confidential-badge {
+  display: inline-block;
+  border: 1px solid #c8a951;
+  color: #c8a951;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.date-label {
+  font-size: 11px;
+  color: #7b9fc7;
+  white-space: nowrap;
+}
+
+/* ── Accent bar ── */
+.accent-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #1e5faa 0%, #27aae1 55%, #c8a951 100%);
+}
+
+/* ── Body ── */
+.body {
+  padding: 30px 36px;
+  display: grid;
+  grid-template-columns: 1fr 288px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ── Section title ── */
+.section-title {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1e5faa;
+  border-bottom: 1.5px solid #1e5faa;
+  padding-bottom: 5px;
+  margin-bottom: 13px;
+}
+
+/* ── Description ── */
+.description-text {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #2c3e50;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+.description-text strong {
+  color: #0d1b3e;
+  font-weight: 600;
+}
+
+/* ── Highlights ── */
+.highlights-section { margin-top: 22px; }
+
+.highlight-item {
+  display: flex;
+  gap: 11px;
+  margin-bottom: 11px;
+  align-items: flex-start;
+}
+
+.highlight-dot {
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+  border-radius: 50%;
+  background: #1e5faa;
+  margin-top: 5px;
+}
+
+.highlight-text {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: #2c3e50;
+  word-break: keep-all;
+}
+
+.highlight-text strong {
+  color: #0d1b3e;
+  font-weight: 600;
+}
+
+/* ── Right column ── */
+.right-col { display: flex; flex-direction: column; gap: 22px; }
+
+/* ── Stats grid ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.stat-card {
+  background: #f0f4fa;
+  border-radius: 5px;
+  padding: 13px 10px;
+  text-align: center;
+  border-top: 2.5px solid #1e5faa;
+}
+
+.stat-card.gold { border-top-color: #c8a951; }
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d1b3e;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 9.5px;
+  color: #6b7d94;
+  margin-top: 4px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* ── Financial table ── */
+.fin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fin-table thead tr { background: #0d1b3e; }
+
+.fin-table thead th {
+  padding: 8px 10px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.3px;
+}
+
+.fin-table thead th:last-child { text-align: right; }
+
+.fin-table tbody tr { border-bottom: 1px solid #eef0f4; }
+.fin-table tbody tr:last-child { border-bottom: none; }
+.fin-table tbody tr:nth-child(even) { background: #f8f9fb; }
+
+.fin-table tbody td {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: #2c3e50;
+}
+
+.fin-table tbody td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: #0d1b3e;
+}
+
+.fin-table tfoot td {
+  padding: 7px 10px;
+  font-size: 10px;
+  color: #9aabb8;
+  font-style: italic;
+}
+
+/* ── Transaction box ── */
+.transaction-box {
+  background: #0d1b3e;
+  border-radius: 5px;
+  padding: 18px 16px;
+}
+
+.transaction-box .section-title {
+  color: #7b9fc7;
+  border-bottom-color: #2a4a7a;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 9px;
+  font-size: 12px;
+}
+
+.t-label { color: #7b9fc7; font-weight: 400; white-space: nowrap; flex-shrink: 0; }
+.t-value { color: #fff; font-weight: 600; text-align: right; word-break: keep-all; }
+
+.transaction-note {
+  font-size: 10.5px;
+  color: #5a7a9e;
+  margin-top: 12px;
+  line-height: 1.6;
+  border-top: 1px solid #1d3560;
+  padding-top: 10px;
+  word-break: keep-all;
+}
+
+/* ── Footer ── */
+.footer {
+  background: #f0f4fa;
+  border-top: 1px solid #dde3ed;
+  padding: 13px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  font-size: 9.5px;
+  color: #8a9ab0;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.footer-right {
+  font-size: 10px;
+  color: #1e5faa;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════
+   MOBILE RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 720px) {
+  body { padding: 56px 0 40px; background: #e8ecf2; }
+
+  .pdf-btn { top: 12px; right: 12px; padding: 9px 14px; font-size: 12px; }
+
+  .page-wrap { gap: 32px; }
+
+  .teaser { border-radius: 0; }
+
+  .header {
+    padding: 20px 18px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header-right { align-items: flex-start; }
+  .project-name { font-size: 24px; }
+  .project-sub { font-size: 11.5px; }
+
+  .body {
+    grid-template-columns: 1fr;
+    padding: 20px 18px;
+    gap: 22px;
+  }
+
+  .left-col { order: 2; }
+  .right-col { order: 1; }
+
+  .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .stat-value { font-size: 14px; }
+  .stat-label { font-size: 8.5px; }
+
+  .footer {
+    padding: 12px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .page-divider { margin: 0 18px; }
+}
+
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat-value { font-size: 17px; }
+  .description-text { font-size: 12.5px; }
+  .highlight-text { font-size: 12px; }
+  .fin-table tbody td, .fin-table thead th { font-size: 11px; padding: 6px 8px; }
+  .transaction-item { font-size: 11.5px; }
+}
+
+/* ══════════════════════════════════════════
+   PRINT / PDF STYLES
+══════════════════════════════════════════ */
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  html, body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+  }
+
+  .pdf-btn { display: none !important; }
+  .page-divider { display: none !important; }
+
+  .page-wrap {
+    gap: 0;
+    max-width: 100%;
+  }
+
+  .teaser {
+    box-shadow: none;
+    border-radius: 0;
+    page-break-after: always;
+    break-after: page;
+    width: 100%;
+  }
+
+  /* Print: 항상 2컬럼 유지 */
+  .body { grid-template-columns: 1fr 288px !important; }
+  .left-col { order: 1 !important; }
+  .right-col { order: 2 !important; }
+
+  .stats-grid { grid-template-columns: 1fr 1fr !important; }
+  .stat-value { font-size: 16px !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ PDF BUTTON ══ -->
+<button class="pdf-btn" onclick="window.print()">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm0 1v18h12V8h-4a1 1 0 0 1-1-1V3H6zm7 0v4h4l-4-4zM8 13h8v1H8v-1zm0 3h8v1H8v-1zm0-6h4v1H8v-1z"/>
+  </svg>
+  PDF 저장
+</button>
+
+<div class="page-wrap">
+
+  <!-- ══════════════════════════
+       PAGE 1 — 국문
+  ══════════════════════════ -->
+  <div class="teaser" id="page-kr">
+
+    <div class="header">
+      <div>
+        <div class="project-label">Project</div>
+        <div class="project-name">Aurora</div>
+        <div class="project-sub">동북아 선도 이차전지 소재 플랫폼</div>
+      </div>
+      <div class="header-right">
+        <div class="confidential-badge">기밀 · 논의 목적 한정</div>
+        <div class="date-label">2026년 5월 &nbsp;|&nbsp; 경영권 매각</div>
+      </div>
+    </div>
+    <div class="accent-bar"></div>
+
+    <div class="body">
+      <div class="left-col">
+
+        <div class="section-title">회사 개요</div>
+        <p class="description-text">
+          <strong>Project Aurora</strong>는 동북아에 본사를 둔 <strong>글로벌 최상위권 양극재(CAM) 제조 기업</strong>으로,
+          전기차 공급망의 핵심 소재인 <strong>고니켈 NCA/NCMA 양극재</strong> 분야에서 독보적인 기술력과 생산 역량을 보유하고 있습니다.
+          한국·유럽·북미의 Tier-1 배터리 셀 제조사에 장기 공급 계약을 기반으로 소재를 납품하고 있습니다.
+        </p>
+        <br>
+        <p class="description-text">
+          전기차 수요 조정 국면(캐즘)에도 불구하고, 당사는 <strong>운영 효율화·제품 믹스 프리미엄화·핵심 고객 관계 심화</strong>를 통해
+          안정적인 외형 성장과 수익성 개선을 동시에 달성하였습니다.
+          EV 전환 가속화 재개 시 가장 큰 수혜를 받을 수 있는 구조적 포지셔닝을 확보하고 있습니다.
+        </p>
+
+        <div class="highlights-section">
+          <div class="section-title">투자 포인트</div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>EV 캐즘 구간 극복 · 검증된 성장 탄력성.</strong>
+              2023~2025년 EV 수요 조정기에도 매출·수익성을 동시에 유지하며 동종 업체 대비
+              우월한 실적 방어력을 입증. 고객 다변화와 제품 혁신을 통한 선제적 포트폴리오 재편이 주효.
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>고니켈 양극재 독자 기술력 · 높은 진입 장벽.</strong>
+              NCA/NCMA 화학계에서 수십 년간 축적된 R&amp;D·생산 노하우와 특허 포트폴리오 보유.
+              후발 경쟁사의 단기 추격이 구조적으로 어려운 기술적 해자.
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>글로벌 Tier-1 셀 메이커와의 장기 공급 계약.</strong>
+              복수의 글로벌 배터리 셀 제조사와 다년간 공급 계약 체결,
+              안정적인 매출 가시성과 가격 안정성 확보.
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>전구체부터 양극재까지 수직 계열화된 플랫폼.</strong>
+              원가 통제력·수율 최적화·생산 스케일업 역량을 동시에 확보한 수직 계열화 구조.
+              원자재 변동성에 대한 완충력 탁월.
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>IRA·CRMA 수혜 · 글로벌 생산 거점 확장.</strong>
+              북미·유럽 현지 공급망 의무화 기조에 대응한 글로벌 생산 거점 확대 진행 중.
+              로컬 콘텐츠 요건 충족을 통한 고객사 장기 파트너십 강화.
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>업계 최고 수준의 경영진 · 검증된 실행력.</strong>
+              복수 사업장 운영, 급격한 성장기 스케일업, 글로벌 규제 환경 대응 등
+              다양한 국면에서 실행력을 입증한 경영진 보유.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="right-col">
+
+        <div>
+          <div class="section-title">핵심 재무 지표 (FY 2024)</div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value">3.4조</div>
+              <div class="stat-label">매출액 (KRW)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">3,611억</div>
+              <div class="stat-label">EBITDA</div>
+            </div>
+            <div class="stat-card gold">
+              <div class="stat-value">10.6%</div>
+              <div class="stat-label">EBITDA 마진</div>
+            </div>
+            <div class="stat-card gold">
+              <div class="stat-value">6.3%</div>
+              <div class="stat-label">영업이익률</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-title">재무 요약</div>
+          <table class="fin-table">
+            <thead>
+              <tr><th>항목</th><th style="text-align:right">금액 (억원)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>매출액</td><td>34,130</td></tr>
+              <tr><td>영업이익</td><td>2,138</td></tr>
+              <tr><td>EBITDA</td><td>3,611</td></tr>
+              <tr><td>EBITDA 마진</td><td>10.6%</td></tr>
+              <tr><td>영업이익률</td><td>6.3%</td></tr>
+            </tbody>
+            <tfoot><tr><td colspan="2">* FY 2024 연결 기준</td></tr></tfoot>
+          </table>
+        </div>
+
+        <div class="transaction-box">
+          <div class="section-title">거래 개요</div>
+          <div class="transaction-item">
+            <span class="t-label">거래 구조</span>
+            <span class="t-value">경영권 지분 매각 (51%+)</span>
+          </div>
+          <div class="transaction-item">
+            <span class="t-label">대상 투자자</span>
+            <span class="t-value">전략적·재무적 투자자</span>
+          </div>
+          <div class="transaction-item">
+            <span class="t-label">소재지</span>
+            <span class="t-value">동북아 (국내 상장사)</span>
+          </div>
+          <div class="transaction-item">
+            <span class="t-label">프로세스</span>
+            <span class="t-value">구조화 매각 프로세스</span>
+          </div>
+          <div class="transaction-item">
+            <span class="t-label">세부 자료</span>
+            <span class="t-value">NDA 체결 후 제공</span>
+          </div>
+          <div class="transaction-note">
+            관심 있는 적격 투자자는 의향서(EOI)를 제출하여 주시기 바랍니다.
+            기밀유지계약(NDA) 체결 후 상세 재무 자료 및 경영진 면담 기회가 제공됩니다.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-left">
+        본 문서는 엄격히 기밀로 분류되며, 수신인에 한하여 사용이 허용됩니다.
+        사전 서면 동의 없이 복제·배포·공개하는 행위를 금지합니다.<br>
+        수록된 정보는 신뢰할 수 있는 출처를 기반으로 작성되었으나, 그 정확성을 보증하지 않습니다.
+      </div>
+      <div class="footer-right">Project Aurora &nbsp;|&nbsp; 2026. 05 &nbsp;|&nbsp; p.1</div>
+    </div>
+  </div>
+
+  <!-- Page 구분선 (화면에서만 표시) -->
+  <div class="page-divider">Page 2 — English Version</div>
+
+  <!-- ══════════════════════════
+       PAGE 2 — ENGLISH
+  ══════════════════════════ -->
+  <div class="teaser" id="page-en">
+
+    <div class="header">
+      <div>
+        <div class="project-label">Project</div>
+        <div class="project-name">Aurora</div>
+        <div class="project-sub">Leading Advanced Battery Materials Platform — Northeast Asia</div>
+      </div>
+      <div class="header-right">
+        <div class="confidential-badge">Confidential · For Discussion Purposes Only</div>
+        <div class="date-label">May 2026 &nbsp;|&nbsp; Majority Stake Sale</div>
+      </div>
+    </div>
+    <div class="accent-bar"></div>
+
+    <div class="body">
+      <div class="left-col">
+
+        <div class="section-title">Company Overview</div>
+        <p class="description-text">
+          <strong>Project Aurora</strong> is a <strong>premier cathode active material (CAM) manufacturer</strong>
+          headquartered in Northeast Asia, positioned at the heart of the global electric vehicle supply chain.
+          The Company is one of the region's most technologically advanced producers of
+          <strong>high-nickel NCA/NCMA cathode materials</strong>, supplying leading Tier-1 battery cell manufacturers
+          across Korea, Europe, and North America under long-term supply agreements.
+        </p>
+        <br>
+        <p class="description-text">
+          Despite near-term headwinds from EV demand softness, the Company has demonstrated
+          <strong>resilient top-line growth and robust margin expansion</strong> through operational efficiency,
+          product mix premiumization, and deepening strategic relationships with blue-chip OEM and cell-maker customers.
+          It is uniquely positioned to capture disproportionate upside as EV adoption re-accelerates globally.
+        </p>
+
+        <div class="highlights-section">
+          <div class="section-title">Investment Highlights</div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>Proven resilience through EV market transition.</strong>
+              Sustained revenue growth and profitability through the 2023–2025 EV demand normalization cycle,
+              outperforming peers through proactive customer diversification and product innovation.
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>Proprietary high-nickel CAM technology with significant barriers to entry.</strong>
+              Decades of accumulated R&amp;D and manufacturing know-how in NCA/NCMA chemistry,
+              backed by a comprehensive patent portfolio that underpins long-term competitive differentiation.
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>Tier-1 customer base with long-term supply agreements.</strong>
+              Deep, multi-year contractual relationships with leading global battery cell manufacturers,
+              providing high revenue visibility and pricing stability.
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>Vertically integrated and scalable platform.</strong>
+              Integrated operations spanning precursor materials through finished CAM,
+              enabling superior cost control, yield optimization, and capacity scalability.
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>Significant international expansion runway aligned with IRA / CRMA tailwinds.</strong>
+              Active footprint development in North America and Europe positioning the Company
+              to serve localized EV supply chain mandates and local content requirements.
+            </div>
+          </div>
+
+          <div class="highlight-item">
+            <div class="highlight-dot"></div>
+            <div class="highlight-text">
+              <strong>Experienced management team with proven execution track record.</strong>
+              Deep industry expertise demonstrated across rapid scale-up, multi-site manufacturing,
+              and complex cross-border regulatory environments.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="right-col">
+
+        <div>
+          <div class="section-title">Key Metrics (FY 2024)</div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value">₩3.4T</div>
+              <div class="stat-label">Revenue</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">₩361B</div>
+              <div class="stat-label">EBITDA</div>
+            </div>
+            <div class="stat-card gold">
+              <div class="stat-value">10.6%</div>
+              <div class="stat-label">EBITDA Margin</div>
+            </div>
+            <div class="stat-card gold">
+              <div class="stat-value">6.3%</div>
+              <div class="stat-label">Operating Margin</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-title">Financial Summary</div>
+          <table class="fin-table">
+            <thead>
+              <tr><th>Metric</th><th style="text-align:right">KRW (억원)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Revenue</td><td>34,130</td></tr>
+              <tr><td>Operating Income</td><td>2,138</td></tr>
+              <tr><td>EBITDA</td><td>3,611</td></tr>
+              <tr><td>EBITDA Margin</td><td>10.6%</td></tr>
+              <tr><td>Operating Margin</td><td>6.3%</td></tr>
+            </tbody>
+            <tfoot><tr><td colspan="2">* FY 2024 consolidated basis</td></tr></tfoot>
+          </table>
+        </div>
+
+        <div class="transaction-box">
+          <div class="section-title">Transaction Overview</div>
+          <div class="transaction-item">
+            <span class="t-label">Structure</span>
+            <span class="t-value">Majority Stake Sale (51%+)</span>
+          </div>
+          <div class="transaction-item">
+            <span class="t-label">Target buyers</span>
+            <span class="t-value">Strategic &amp; Financial (PE)</span>
+          </div>
+          <div class="transaction-item">
+            <span class="t-label">Geography</span>
+            <span class="t-value">Northeast Asia (domestic listing)</span>
+          </div>
+          <div class="transaction-item">
+            <span class="t-label">Process</span>
+            <span class="t-value">Structured sell-side process</span>
+          </div>
+          <div class="transaction-item">
+            <span class="t-label">Materials</span>
+            <span class="t-value">Available upon NDA execution</span>
+          </div>
+          <div class="transaction-note">
+            Qualified parties are invited to submit an Expression of Interest (EOI).
+            Detailed financial information and management access are available following
+            execution of a confidentiality agreement.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-left">
+        This document is strictly confidential and is solely for the use of the intended recipient.
+        Any reproduction or distribution without prior written consent is strictly prohibited.<br>
+        The information contained herein has been compiled from sources believed to be reliable but is not guaranteed.
+      </div>
+      <div class="footer-right">Project Aurora &nbsp;|&nbsp; May 2026 &nbsp;|&nbsp; p.2</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
