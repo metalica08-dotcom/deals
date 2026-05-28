@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FY26 Deal Advisory AI 교육 | 삼정KPMG</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Reset & Base ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --kpmg-navy:    #0d1b3e;
+  --kpmg-blue1:   #00338D;
+  --kpmg-blue2:   #005EB8;
+  --kpmg-blue3:   #0091DA;
+  --kpmg-teal:    #00A3A1;
+  --kpmg-yellow:  #EAAA00;
+  --kpmg-red:     #BC204B;
+  --kpmg-purple:  #470A68;
+  --kpmg-lblue:   #c8e0f4;
+  --kpmg-xblue:   #e8f3fb;
+  --text-dark:    #1a2340;
+  --text-mid:     #2c3e50;
+  --text-light:   #6b7d94;
+  --border:       #dde3ed;
+  --bg-page:      #f0f4fa;
+  --white:        #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans KR', 'Inter', sans-serif;
+  background: var(--bg-page);
+  color: var(--text-dark);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── TOP NAV ── */
+.topnav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: var(--kpmg-navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 52px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.topnav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topnav-logo {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.topnav-logo span { color: var(--kpmg-blue3); }
+
+.topnav-title {
+  font-size: 11px;
+  color: #7b9fc7;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  padding-left: 12px;
+  letter-spacing: 0.3px;
+}
+
+.topnav-pills {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.nav-pill {
+  font-size: 10px;
+  font-weight: 600;
+  color: #7b9fc7;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 4px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nav-pill:hover,
+.nav-pill.active {
+  background: var(--kpmg-blue2);
+  border-color: var(--kpmg-blue2);
+  color: #fff;
+}
+
+.pdf-btn {
+  background: var(--kpmg-yellow);
+  color: var(--kpmg-navy) !important;
+  border-color: var(--kpmg-yellow) !important;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+.pdf-btn:hover { background: #d49800; border-color: #d49800 !important; }
+
+/* ── SPACER ── */
+.nav-spacer { height: 52px; }
+
+/* ── COVER ── */
+.cover {
+  background: var(--kpmg-navy);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 72px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 280px;
+  background: linear-gradient(180deg, var(--kpmg-blue2) 0%, var(--kpmg-blue1) 40%, rgba(0,51,141,0.4) 70%, transparent 100%);
+  clip-path: polygon(60px 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.cover-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--kpmg-blue3);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.cover-div {
+  width: 48px;
+  height: 3px;
+  background: var(--kpmg-yellow);
+  margin: 20px 0 28px;
+}
+
+.cover-title {
+  font-size: 52px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.cover-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: #a8c0dc;
+  line-height: 1.8;
+  max-width: 680px;
+}
+
+.cover-sub strong {
+  color: var(--kpmg-blue3);
+  font-weight: 600;
+}
+
+.cover-disclaimer {
+  background: rgba(234,170,0,0.12);
+  border: 1px solid rgba(234,170,0,0.4);
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin-top: 32px;
+  max-width: 700px;
+}
+
+.cover-disclaimer-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--kpmg-yellow);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.cover-disclaimer p {
+  font-size: 11.5px;
+  color: #a8b8cc;
+  line-height: 1.65;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  align-items: flex-end;
+  margin-top: 48px;
+}
+
+.meta-item { }
+
+.meta-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--kpmg-blue3);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.meta-value {
+  font-size: 12.5px;
+  color: #d0dde8;
+  font-weight: 400;
+}
+
+.cover-footer {
+  font-size: 10px;
+  color: #4a6080;
+  margin-top: 4px;
+}
+
+/* ── AGENDA ── */
+.agenda {
+  background: var(--kpmg-navy);
+  padding: 60px 72px;
+}
+
+.section-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--kpmg-blue3);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.agenda-title {
+  font-size: 34px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.agenda-desc {
+  font-size: 13px;
+  color: #7b9fc7;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.agenda-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.agenda-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 18px 22px;
+  transition: background 0.2s;
+}
+
+.agenda-item:hover { background: rgba(255,255,255,0.08); }
+
+.agenda-item.core {
+  background: rgba(0,94,184,0.25);
+  border-color: rgba(0,94,184,0.5);
+}
+
+.agenda-num {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--kpmg-blue3);
+  min-width: 32px;
+  font-style: italic;
+}
+
+.agenda-item.core .agenda-num { color: #fff; }
+
+.agenda-text h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.agenda-text p {
+  font-size: 11px;
+  color: #7b9fc7;
+}
+
+.agenda-item.core .agenda-text p { color: #a8c0dc; }
+
+.core-badge {
+  margin-left: auto;
+  background: var(--kpmg-blue2);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+/* ── CHAPTER DIVIDERS ── */
+.chapter-divider {
+  background: var(--kpmg-lblue);
+  padding: 48px 72px;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.chapter-num-lg {
+  font-size: 80px;
+  font-weight: 900;
+  color: var(--kpmg-blue1);
+  line-height: 1;
+  opacity: 0.25;
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.chapter-div-text h2 {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--kpmg-blue1);
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.chapter-div-text p {
+  font-size: 13px;
+  color: #3a5a80;
+}
+
+/* ── SECTION CONTAINER ── */
+.section-block {
+  padding: 52px 72px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-block:nth-child(even) { background: #f8fafc; }
+
+.breadcrumb {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--kpmg-blue3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-h2 {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--kpmg-blue1);
+  letter-spacing: -0.3px;
+  margin-bottom: 8px;
+}
+
+.section-lead {
+  font-size: 13px;
+  color: var(--text-mid);
+  max-width: 780px;
+  margin-bottom: 32px;
+  line-height: 1.75;
+}
+
+/* ── TWO COL ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.four-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 14px;
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.card.navy {
+  background: var(--kpmg-navy);
+  border-color: transparent;
+}
+
+.card.blue1 {
+  background: var(--kpmg-blue1);
+  border-color: transparent;
+}
+
+.card.blue2 {
+  background: var(--kpmg-blue2);
+  border-color: transparent;
+}
+
+.card.xblue {
+  background: var(--kpmg-xblue);
+  border-color: #b8d4eb;
+}
+
+.card.yellow-border {
+  border-left: 4px solid var(--kpmg-yellow);
+  background: #fffbee;
+}
+
+.card.red-border {
+  border-left: 4px solid var(--kpmg-red);
+  background: #fff5f7;
+}
+
+.card.teal-border {
+  border-left: 4px solid var(--kpmg-teal);
+  background: #f0fafa;
+}
+
+.card-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--kpmg-blue2);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid var(--kpmg-blue2);
+}
+
+.card.navy .card-title { color: var(--kpmg-blue3); border-bottom-color: rgba(0,145,218,0.3); }
+.card.blue1 .card-title { color: #a8d0f0; border-bottom-color: rgba(168,208,240,0.3); }
+
+/* ── STEP FLOW ── */
+.step-flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.step-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--kpmg-blue1);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.step-connector {
+  flex: 0 0 32px;
+  height: 2px;
+  background: var(--kpmg-blue2);
+  margin-top: 22px;
+  opacity: 0.4;
+}
+
+.step-body {
+  padding: 0 8px;
+}
+
+.step-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--kpmg-blue1);
+  margin-bottom: 5px;
+}
+
+.step-desc {
+  font-size: 11px;
+  color: var(--text-mid);
+  line-height: 1.55;
+}
+
+/* ── PROCESS LIST ── */
+.process-list { list-style: none; }
+
+.process-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+.process-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--kpmg-blue2);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.process-text {
+  font-size: 12.5px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+.process-text strong {
+  color: var(--kpmg-blue1);
+  font-weight: 700;
+}
+
+/* ── BADGE LABELS ── */
+.badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.badge-ai { background: var(--kpmg-blue2); color: #fff; }
+.badge-human { background: #4a5568; color: #fff; }
+.badge-warn { background: var(--kpmg-yellow); color: var(--kpmg-navy); }
+.badge-ok { background: var(--kpmg-teal); color: #fff; }
+.badge-no { background: var(--kpmg-red); color: #fff; }
+.badge-core { background: var(--kpmg-blue2); color: #fff; }
+
+/* ── PROMPT BOX ── */
+.prompt-box {
+  background: var(--kpmg-navy);
+  border-radius: 8px;
+  padding: 22px 26px;
+  margin: 18px 0;
+}
+
+.prompt-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--kpmg-blue3);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prompt-label::before {
+  content: '▶';
+  font-size: 8px;
+}
+
+.prompt-text {
+  font-size: 12.5px;
+  color: #d0dde8;
+  line-height: 1.75;
+  font-family: 'Noto Sans KR', monospace;
+  white-space: pre-wrap;
+}
+
+.prompt-note {
+  font-size: 11px;
+  color: #5a7a9e;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.55;
+}
+
+/* ── PROMPT COMPARISON ── */
+.cmp-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 14px 0 28px;
+}
+.cmp-box {
+  background: var(--kpmg-navy);
+  border-radius: 8px;
+  padding: 18px 20px;
+  border-left: 4px solid transparent;
+}
+.cmp-bad  { border-left-color: var(--kpmg-red); }
+.cmp-good { border-left-color: var(--kpmg-teal); }
+.cmp-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cmp-tag.bad  { color: var(--kpmg-red); }
+.cmp-tag.good { color: var(--kpmg-teal); }
+.cmp-text {
+  font-size: 12px;
+  color: #c0d0e0;
+  line-height: 1.75;
+  font-family: 'Noto Sans KR', monospace;
+  white-space: pre-wrap;
+}
+.cmp-why {
+  font-size: 11px;
+  color: #5a7a9e;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.5;
+}
+.cmp-scenario-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--kpmg-blue2);
+  margin: 28px 0 10px;
+  padding: 0 0 0 12px;
+  border-left: 3px solid var(--kpmg-blue2);
+}
+.cmp-section-intro {
+  font-size: 13px;
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+@media (max-width: 700px) {
+  .cmp-wrap { grid-template-columns: 1fr; }
+}
+
+/* ── TABLE ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin: 14px 0;
+}
+
+.data-table thead tr {
+  background: var(--kpmg-blue1);
+  color: #fff;
+}
+
+.data-table thead th {
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.3px;
+}
+
+.data-table tbody tr { border-bottom: 1px solid var(--border); }
+.data-table tbody tr:last-child { border-bottom: none; }
+.data-table tbody tr:nth-child(even) { background: var(--kpmg-xblue); }
+
+.data-table tbody td {
+  padding: 9px 12px;
+  color: var(--text-mid);
+  vertical-align: top;
+}
+
+.data-table tbody td:first-child {
+  color: var(--kpmg-blue1);
+  font-weight: 600;
+}
+
+/* ── AXIS CARDS ── */
+.axis-flow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 20px 0;
+}
+
+.axis-card {
+  flex: 1;
+  background: var(--kpmg-xblue);
+  border: 1px solid #b8d4eb;
+  border-radius: 6px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.axis-arrow {
+  font-size: 22px;
+  color: var(--kpmg-blue2);
+  flex-shrink: 0;
+  padding: 0 10px;
+  opacity: 0.6;
+}
+
+.axis-num {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--kpmg-blue3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.axis-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--kpmg-blue1);
+  margin-bottom: 8px;
+}
+
+.axis-desc {
+  font-size: 11px;
+  color: var(--text-mid);
+  line-height: 1.55;
+}
+
+/* ── SIGNAL TYPES ── */
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.signal-card {
+  background: var(--kpmg-xblue);
+  border: 1px solid #b8d4eb;
+  border-top: 3px solid var(--kpmg-blue2);
+  border-radius: 6px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.signal-icon {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.signal-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--kpmg-blue1);
+  margin-bottom: 5px;
+}
+
+.signal-desc {
+  font-size: 10px;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* ── PRINCIPLE LIST ── */
+.principle-list { display: flex; flex-direction: column; gap: 12px; }
+
+.principle-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.principle-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--kpmg-blue1);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.principle-content h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--kpmg-blue1);
+  margin-bottom: 3px;
+}
+
+.principle-content p {
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* ── PITFALL BOX ── */
+.pitfall-list { display: flex; flex-direction: column; gap: 12px; }
+
+.pitfall-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #fff5f7;
+  border: 1px solid rgba(188,32,75,0.15);
+  border-left: 3px solid var(--kpmg-red);
+  border-radius: 4px;
+  padding: 14px 16px;
+}
+
+.pitfall-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pitfall-content h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--kpmg-red);
+  margin-bottom: 3px;
+}
+
+.pitfall-content p {
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.55;
+}
+
+/* ── CHECKLIST ── */
+.checklist { display: flex; flex-direction: column; gap: 10px; }
+
+.check-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--kpmg-teal);
+  border-radius: 4px;
+  background: rgba(0,163,161,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.check-mark {
+  font-size: 11px;
+  color: var(--kpmg-teal);
+  font-weight: 700;
+}
+
+.check-text {
+  font-size: 12.5px;
+  color: var(--text-mid);
+  line-height: 1.55;
+}
+
+/* ── RISK CARDS ── */
+.risk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.risk-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--kpmg-red);
+  border-radius: 6px;
+  padding: 18px;
+}
+
+.risk-num {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--kpmg-red);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.risk-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.risk-desc {
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.55;
+}
+
+/* ── OUTCOME BOX ── */
+.outcome-box {
+  background: var(--kpmg-xblue);
+  border: 1px solid #b8d4eb;
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin-top: 16px;
+}
+
+.outcome-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--kpmg-blue2);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.outcome-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  font-size: 12.5px;
+}
+
+.outcome-col h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--kpmg-blue1);
+  margin-bottom: 6px;
+}
+
+.outcome-col p { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
+
+/* ── MEMO CARD ── */
+.memo-card {
+  background: var(--kpmg-xblue);
+  border: 1px solid #b8d4eb;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.memo-header {
+  background: var(--kpmg-blue1);
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.memo-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  border-bottom: 1px solid #b8d4eb;
+}
+
+.memo-row:last-child { border-bottom: none; }
+
+.memo-key {
+  background: rgba(0,51,141,0.06);
+  padding: 12px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--kpmg-blue2);
+  border-right: 1px solid #b8d4eb;
+  display: flex;
+  align-items: center;
+}
+
+.memo-val {
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+.fact-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-right: 4px;
+  background: var(--kpmg-blue3);
+  color: #fff;
+}
+
+.est-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-right: 4px;
+  background: var(--kpmg-yellow);
+  color: var(--kpmg-navy);
+}
+
+/* ── KEYPOINT BOX ── */
+.keypoint {
+  background: var(--kpmg-blue1);
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.keypoint-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+.keypoint-text {
+  font-size: 12.5px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.keypoint-text strong { color: var(--kpmg-yellow); }
+
+/* ── WRAPUP ── */
+.wrapup {
+  background: var(--kpmg-navy);
+  padding: 60px 72px;
+}
+
+.wrapup-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--kpmg-blue3);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.wrapup-h2 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 40px;
+}
+
+.takeaway-list { display: flex; flex-direction: column; gap: 20px; }
+
+.takeaway-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.takeaway-num {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--kpmg-blue3);
+  line-height: 1;
+  opacity: 0.6;
+  flex-shrink: 0;
+  min-width: 50px;
+}
+
+.takeaway-body h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.takeaway-body p {
+  font-size: 12px;
+  color: #7b9fc7;
+  line-height: 1.6;
+}
+
+.wrapup-div {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 40px 0;
+}
+
+/* ── DISCLAIMER SECTION ── */
+.disclaimer-section {
+  background: #fff8e8;
+  border-top: 4px solid var(--kpmg-yellow);
+  padding: 40px 72px;
+}
+
+.disclaimer-h2 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--kpmg-yellow);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.disclaimer-h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--kpmg-navy);
+  margin-bottom: 20px;
+}
+
+.disclaimer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.disclaimer-card {
+  background: var(--white);
+  border: 1px solid rgba(234,170,0,0.3);
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+
+.disclaimer-card h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--kpmg-blue1);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.disclaimer-card p {
+  font-size: 11.5px;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--kpmg-navy);
+  padding: 18px 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-left {
+  font-size: 10px;
+  color: #4a6080;
+  line-height: 1.6;
+}
+
+.footer-right {
+  font-size: 10px;
+  color: var(--kpmg-blue3);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ── UTILITY ── */
+.mt-0 { margin-top: 0; }
+.mt-8 { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mt-20 { margin-top: 20px; }
+.mt-28 { margin-top: 28px; }
+.mb-12 { margin-bottom: 12px; }
+.text-navy { color: var(--kpmg-navy); }
+.text-blue1 { color: var(--kpmg-blue1); }
+.text-white { color: #fff; }
+
+/* ── PRINT ── */
+@media print {
+  .topnav, .pdf-btn { display: none !important; }
+  .nav-spacer { height: 0; }
+  body { background: white; font-size: 11px; }
+  .cover { min-height: auto; padding: 40px 48px 32px; }
+  .section-block, .agenda, .wrapup, .disclaimer-section { padding: 36px 48px; }
+  .chapter-divider { padding: 28px 48px; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .cover, .agenda, .wrapup, .disclaimer-section { padding: 40px 28px; }
+  .section-block, .chapter-divider { padding: 36px 28px; }
+  .footer { padding: 16px 28px; }
+  .cover-title { font-size: 36px; }
+  .two-col, .three-col, .four-col, .signal-grid { grid-template-columns: 1fr; }
+  .agenda-grid { grid-template-columns: 1fr; }
+  .risk-grid, .disclaimer-grid { grid-template-columns: 1fr; }
+  .axis-flow { flex-direction: column; }
+  .step-flow { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .step-connector { display: none; }
+  .topnav-pills { display: none; }
+  .outcome-row { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="topnav-brand">
+    <div class="topnav-logo">삼정<span>KPMG</span></div>
+    <div class="topnav-title">FY26 Deal Advisory AI 교육</div>
+  </div>
+  <div class="topnav-pills">
+    <a href="#ch1" class="nav-pill">I. 전제</a>
+    <a href="#ch2" class="nav-pill">II. 인수 후보군</a>
+    <a href="#ch3" class="nav-pill">III. 딜 시그널</a>
+    <a href="#ch4" class="nav-pill">IV. 전략 리서치</a>
+    <a href="#ch5" class="nav-pill">V. LOI</a>
+    <a href="#ch6" class="nav-pill">VI. SPA</a>
+    <a href="#prompt-compare" class="nav-pill">프롬프트 비교</a>
+    <a href="#wrapup" class="nav-pill">마무리</a>
+    <a href="#" onclick="window.print();return false;" class="nav-pill pdf-btn">PDF ↓</a>
+  </div>
+</nav>
+<div class="nav-spacer"></div>
+
+<!-- ═══════════════════════════ COVER ═══════════════════════════ -->
+<section class="cover" id="cover">
+  <div>
+    <div class="cover-label">삼정KPMG | Deal Advisory 사내 교육</div>
+    <div class="cover-title">FY26 Deal Advisory<br>AI 교육</div>
+    <div class="cover-div"></div>
+    <div class="cover-sub">
+      Deal 실무 AI 활용 :<br>
+      <strong>잠재적 인수 후보군 발굴 자동화</strong> · <strong>뉴스 플로우 기반의 딜 시그널 포착</strong> ·<br>
+      <strong>전략적 니즈 리서치</strong> · <strong>LOI 초안 작성</strong> · <strong>SPA 등 문서 검토</strong>
+    </div>
+
+    <div class="cover-disclaimer">
+      <div class="cover-disclaimer-title">⚠ Claude 미도입 안내</div>
+      <p>본 교육에서 시연되는 <strong style="color:#EAAA00">Claude</strong>를 포함한 생성형 AI 도구는 현재 삼정KPMG 공식 업무용으로 도입되지 않았습니다.
+      본 교육의 목적은 AI 활용 가능성과 실무 접근법의 이해이며, 실제 업무 적용 시 반드시 법인의 정보보안 및 컴플라이언스 정책을 확인하시기 바랍니다.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="cover-meta">
+      <div class="meta-item">
+        <div class="meta-label">교육 대상</div>
+        <div class="meta-value">Deal Advisory 신입·주니어</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">소요 시간</div>
+        <div class="meta-value">약 60분</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">도구</div>
+        <div class="meta-value">범용 생성형 AI (ChatGPT · Claude 등)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">제작</div>
+        <div class="meta-value">Jin Woo Choi · KPMG AI TFT</div>
+      </div>
+    </div>
+    <div class="cover-footer">Business Focus · May 2026</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ AGENDA ═══════════════════════════ -->
+<section class="agenda" id="agenda">
+  <div class="section-badge">AGENDA</div>
+  <div class="agenda-title">교육 개요</div>
+  <div class="agenda-desc">이번 세션의 중심은 '프롬프트 예시 나열'이 아니라, Deal 실무 전 과정에서 AI가 어떻게 속도를 높이고 어디서 사람이 판단해야 하는지를 실질적으로 익히는 것입니다.</div>
+  <div class="agenda-grid">
+    <div class="agenda-item">
+      <div class="agenda-num">I</div>
+      <div class="agenda-text">
+        <h3>왜, 그리고 어떻게 — AI 활용의 전제</h3>
+        <p>업무의 본질 / 4단계 진행 방식과 2가지 기본 원칙</p>
+      </div>
+    </div>
+    <div class="agenda-item core">
+      <div class="agenda-num">II</div>
+      <div class="agenda-text">
+        <h3>잠재적 인수 후보군 발굴 자동화</h3>
+        <p>거래사례 기반 Sourcing · 롱리스트 → 숏리스트 필터링</p>
+      </div>
+      <div class="core-badge">핵심</div>
+    </div>
+    <div class="agenda-item core">
+      <div class="agenda-num">III</div>
+      <div class="agenda-text">
+        <h3>뉴스 플로우 기반의 딜 시그널 포착</h3>
+        <p>매수자의 확장 의지를 공개 뉴스에서 읽는 법</p>
+      </div>
+      <div class="core-badge">핵심</div>
+    </div>
+    <div class="agenda-item core">
+      <div class="agenda-num">IV</div>
+      <div class="agenda-text">
+        <h3>전략적 니즈 리서치</h3>
+        <p>'왜 이 자산이 그들에게 의미 있는가' 구조화</p>
+      </div>
+      <div class="core-badge">핵심</div>
+    </div>
+    <div class="agenda-item">
+      <div class="agenda-num">V</div>
+      <div class="agenda-text">
+        <h3>LOI 초안 작성</h3>
+        <p>AI로 할 수 있는 것과 지켜야 할 선</p>
+      </div>
+    </div>
+    <div class="agenda-item">
+      <div class="agenda-num">VI</div>
+      <div class="agenda-text">
+        <h3>SPA 등 문서 검토</h3>
+        <p>자료를 업로드하지 않고 활용하는 법</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CHAPTER I ═══════════════════════════ -->
+<div class="chapter-divider" id="ch1">
+  <div class="chapter-num-lg">I</div>
+  <div class="chapter-div-text">
+    <h2>왜, 그리고 어떻게 — AI 활용의 전제</h2>
+    <p>업무의 본질과 AI의 역할을 먼저 정렬하지 않으면, 도구는 리스크가 된다</p>
+  </div>
+</div>
+
+<!-- Section: 업무 분해 -->
+<div class="section-block">
+  <div class="breadcrumb">I. 왜, 그리고 어떻게</div>
+  <div class="section-h2">Deal Sourcing의 본질은 AI가 가장 잘하는 일과 겹친다</div>
+  <div class="section-lead">잠재 매수자·매물을 찾는 일은 결국 '흩어진 공개 정보를 모으고 · 구조화하고 · 의미를 해석하는' 작업의 반복입니다. AI는 이 1차 작업을 압축해 주고, 우리는 그만큼 판단과 관계(relationship)에 시간을 더 쓸 수 있습니다.</div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Deal Sourcing 업무의 분해</div>
+      <ul class="process-list">
+        <li class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-text">
+            <div class="badge badge-ai">AI 강점</div><br>
+            <strong>정보 수집</strong> — 산업 리포트·공시·뉴스·DB를 훑어 후보군을 모음
+          </div>
+        </li>
+        <li class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-text">
+            <div class="badge badge-ai">AI 강점</div><br>
+            <strong>구조화</strong> — 기준에 맞춰 표·리스트로 1차 정리
+          </div>
+        </li>
+        <li class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-text">
+            <div class="badge badge-human">사람의 일</div><br>
+            <strong>해석·선별</strong> — 딜 적합성을 판단해 숏리스트로 좁힘
+          </div>
+        </li>
+        <li class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-text">
+            <div class="badge badge-human">사람의 일</div><br>
+            <strong>판단·실행</strong> — 매수자 컨택 전략, 협상, 최종 의사결정
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">AI를 쓰면 무엇이 바뀌나</div>
+      <ul class="process-list">
+        <li class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-text"><strong>리서치 사이클 단축</strong> — 후보군 1차 수집·정리에 쓰던 시간을 크게 줄임. 단, '판단'의 시간은 줄지 않음</div>
+        </li>
+        <li class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-text"><strong>커버리지 확대</strong> — 더 넓은 기업군·거래사례를 빠짐없이 훑어 누락 위험을 낮춤</div>
+        </li>
+        <li class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-text"><strong>초안 가속</strong> — 롱리스트·리서치 메모·LOI의 1차 초안을 즉시 확보</div>
+        </li>
+      </ul>
+      <div class="keypoint">
+        <div class="keypoint-icon">💡</div>
+        <div class="keypoint-text"><strong>한 줄 정리:</strong> AI는 '가속기'이지 '의사결정자'가 아닙니다. 속도는 AI가, 책임은 사람이.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section: 4단계 -->
+<div class="section-block">
+  <div class="breadcrumb">I. 왜, 그리고 어떻게</div>
+  <div class="section-h2">오늘의 진행 방식 — 보고 · 따라하고 · 검증한다</div>
+  <div class="section-lead">모든 케이스에 동일하게 적용되는 4단계 흐름입니다. AI는 1·2단계를 가속하고, 3·4단계의 책임은 사람에게 있습니다.</div>
+
+  <div class="step-flow">
+    <div class="step-item">
+      <div class="step-circle">1</div>
+      <div class="step-body">
+        <div class="step-title">질문 설계</div>
+        <div class="step-desc">공개 정보로 답할 수 있는 형태로 질문을 구체화</div>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-item">
+      <div class="step-circle">2</div>
+      <div class="step-body">
+        <div class="step-title">AI 탐색·정리</div>
+        <div class="step-desc">후보·거래사례·뉴스를 폭넓게 수집하고 표로 구조화</div>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-item">
+      <div class="step-circle">3</div>
+      <div class="step-body">
+        <div class="step-title">교차검증</div>
+        <div class="step-desc">핵심 사실은 원출처(공시·IR·보도)로 직접 확인</div>
+      </div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-item">
+      <div class="step-circle">4</div>
+      <div class="step-body">
+        <div class="step-title">사람의 판단</div>
+        <div class="step-desc">해석·선별·최종 산출물 작성은 담당자가 수행</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col mt-28">
+    <div class="card xblue">
+      <div class="card-title">🔒 비공개 자료는 입력하지 않는다</div>
+      <p style="font-size:12.5px;color:var(--text-mid);line-height:1.7">클라이언트·딜 관련 자료(IM·재무자료·SPA·내부 메모)는 외부 AI에 넣지 않습니다. 섹터·규모·특징 등 일반화된 조건으로만 질문합니다.</p>
+    </div>
+    <div class="card xblue">
+      <div class="card-title">🌐 공개 정보로 찾고, 출처로 검증한다</div>
+      <p style="font-size:12.5px;color:var(--text-mid);line-height:1.7">AI는 '공개된 정보를 빠르게 찾아 정리하는 도구'로 씁니다. 모든 사실관계는 원출처(공시·IR·보도)로 교차검증합니다.</p>
+    </div>
+  </div>
+
+  <div class="card yellow-border mt-16">
+    <p style="font-size:12px;color:var(--text-mid);line-height:1.65"><strong style="color:var(--kpmg-blue1)">참고</strong> — 정보보안·컴플라이언스의 상세 기준은 별도 교육에서 다룹니다. 이 세션은 '그 원칙 위에서 실무를 어떻게 하는가'에 집중합니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════ CHAPTER II ═══════════════════════════ -->
+<div class="chapter-divider" id="ch2">
+  <div class="chapter-num-lg">II</div>
+  <div class="chapter-div-text">
+    <h2>잠재적 인수 후보군 발굴 자동화</h2>
+    <p>거래사례 기반 Sourcing · 롱리스트 생성 · 3개 축으로 숏리스트 압축</p>
+  </div>
+</div>
+
+<!-- Section: 시나리오 -->
+<div class="section-block">
+  <div class="breadcrumb">II. 인수 후보군 발굴 · 시나리오 설정</div>
+  <div class="section-h2">오늘의 시나리오 — 가상의 Sell-side 딜</div>
+  <div class="section-lead">실제 클라이언트가 아닌 가상 상황을 놓고 진행합니다. 모든 입력은 일반화된 조건이며, 실명·비공개 조건은 사용하지 않습니다.</div>
+
+  <div class="two-col">
+    <div class="card navy">
+      <div class="card-title">상황 설정</div>
+      <p style="font-size:12.5px;color:#d0dde8;line-height:1.75">국내 전기전자 부품 기업(가칭 'A사')이 <strong style="color:var(--kpmg-blue3)">AI 데이터센터향 전력·냉각 인프라 사업부</strong>를 분할 매각하려 합니다. 우리 팀은 <strong style="color:var(--kpmg-blue3)">매각자문(sell-side)</strong>을 맡았고, 가장 먼저 '누구에게 팔 것인가' — 잠재 매수자 롱리스트가 필요합니다.</p>
+      <p style="font-size:11px;color:#5a7a9e;margin-top:12px;line-height:1.55">왜 이 섹터? AI 데이터센터·전력 인프라는 현재 거래가 가장 활발한 영역 — 거래사례가 많아 데모에 적합</p>
+    </div>
+    <div class="card xblue">
+      <div class="card-title">오늘 따라갈 3단계</div>
+      <ul class="process-list">
+        <li class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-text"><strong>STEP 1 — Sourcing</strong><br>거래사례 기반으로 자금력 있는 잠재 매수자(전략적 + PE)를 발굴하고 롱리스트 작성</div>
+        </li>
+        <li class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-text"><strong>STEP 2 — Signal (→ Ch. III)</strong><br>도출된 매수자들의 '확장 의지'를 시사하는 최근 공개 뉴스 수집</div>
+        </li>
+        <li class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-text"><strong>STEP 3 — Strategic (→ Ch. IV)</strong><br>숏리스트 상위 후보별로 '왜 이 자산이 그들에게 의미 있는가' 전략 가설 도출</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Section: 프롬프트 설계 -->
+<div class="section-block">
+  <div class="breadcrumb">II. 인수 후보군 발굴 · STEP 1 — Sourcing</div>
+  <div class="section-h2">거래사례 기반 잠재 매수자 발굴 — 무엇을 묻는가</div>
+  <div class="section-lead">'데이터센터 인프라 기업 알려줘' 같은 막연한 질문은 막연한 답을 부릅니다. 거래사례·자금력·전략 적합성이라는 검증 가능한 축으로 질문을 설계합니다.</div>
+
+  <div class="two-col">
+    <div>
+      <div class="prompt-box">
+        <div class="prompt-label">AI에 입력하는 프롬프트 (국문)</div>
+        <div class="prompt-text">최근 3년간 글로벌 '데이터센터 인프라'(전력·냉각·전기설비) 분야에서 인수·합병을 실행한 전략적 인수자와 사모펀드(PE)를 거래사례 기반으로 정리해줘.
+
+표로 만들어줘 — 컬럼:
+· 인수자(Acquirer)
+· 인수한 기업·자산(Target)
+· 거래금액 (공개된 경우)
+· 거래 시점
+· 인수자의 추가 인수 여력을 시사하는 공개 정보
+  (현금성 자산 / PE 드라이파우더 / 펀드 조성 등)
+· 출처 (보도자료·공시·언론)
+
+공개 정보 기준으로만 작성하고, 불확실한 항목은 '확인 필요'로 표시해줘.</div>
+      </div>
+    </div>
+    <div>
+      <div class="card xblue" style="height:100%">
+        <div class="card-title">이 프롬프트의 설계 의도</div>
+        <ul class="process-list">
+          <li class="process-item">
+            <div class="process-dot"></div>
+            <div class="process-text"><strong>거래사례를 앵커로</strong> — '관심 있을 것 같은 기업'이 아니라 '실제 돈을 쓴 기업'에서 출발. 추측이 아닌 근거 기반</div>
+          </li>
+          <li class="process-item">
+            <div class="process-dot"></div>
+            <div class="process-text"><strong>자금력을 같이 묻는다</strong> — 매수 의지만큼 중요한 게 매수 능력. 현금성 자산·드라이파우더를 한 번에 확인</div>
+          </li>
+          <li class="process-item">
+            <div class="process-dot"></div>
+            <div class="process-text"><strong>표 형식을 강제</strong> — 결과를 바로 롱리스트 초안으로 쓸 수 있게. 컬럼을 명시하면 비교가 쉬움</div>
+          </li>
+          <li class="process-item">
+            <div class="process-dot"></div>
+            <div class="process-text"><strong>불확실성 표시 요구</strong> — AI가 모르는 것을 '확인 필요'로 드러내게 해, 검증 대상을 스스로 노출시킴</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card yellow-border mt-16">
+    <strong style="color:var(--kpmg-blue1);font-size:12px">실무 팁 — 좋은 프롬프트의 4요소</strong>
+    <p style="font-size:12px;color:var(--text-mid);margin-top:6px;line-height:1.65">① <strong>범위</strong> (섹터·기간·지역을 좁힌다) &nbsp;&nbsp; ② <strong>근거</strong> (거래사례·공시 등 검증 가능한 것에 기반하게) &nbsp;&nbsp; ③ <strong>형식</strong> (표·컬럼을 지정해 바로 활용 가능하게) &nbsp;&nbsp; ④ <strong>정직성</strong> (모르는 것은 '확인 필요'로 표시하게)</p>
+  </div>
+</div>
+
+<!-- Section: 예상 아웃풋 -->
+<div class="section-block">
+  <div class="breadcrumb">II. 인수 후보군 발굴 · STEP 1 — 예상 아웃풋</div>
+  <div class="section-h2">예상 아웃풋의 형태 — 그리고 무엇을 검증하는가</div>
+  <div class="section-lead">AI는 아래와 비슷한 표를 만들어 줍니다. 형태는 유용하지만, 모든 칸은 '검증 대상'입니다.</div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>인수자</th>
+        <th>인수 기업·자산</th>
+        <th>거래금액</th>
+        <th>시점</th>
+        <th>추가 인수 여력 시그널</th>
+        <th>출처</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>글로벌 전력설비 대기업 (전략적)</td>
+        <td>데이터센터 냉각 솔루션 업체</td>
+        <td>약 30억 달러</td>
+        <td>2024</td>
+        <td>연간 영업현금흐름 견조 · 인프라 M&A 지속 언급</td>
+        <td>보도자료</td>
+      </tr>
+      <tr>
+        <td>대형 인프라 PE</td>
+        <td>데이터센터 운영 플랫폼 지분</td>
+        <td>비공개</td>
+        <td>2023</td>
+        <td>신규 인프라 펀드 클로징 (드라이파우더 충분)</td>
+        <td>PE 홈페이지</td>
+      </tr>
+      <tr>
+        <td>전기·자동화 솔루션 기업 (전략적)</td>
+        <td>전력관리(UPS) 사업부</td>
+        <td>약 12억 달러</td>
+        <td>2025</td>
+        <td>데이터센터 부문 CapEx 확대 발표</td>
+        <td>실적발표·언론</td>
+      </tr>
+      <tr>
+        <td>아시아계 인프라 펀드</td>
+        <td>현지 데이터센터 디벨로퍼</td>
+        <td>확인 필요</td>
+        <td>2024</td>
+        <td>아시아 데이터센터 투자 확대 계획 공개</td>
+        <td>언론</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:10px;color:var(--text-light);margin-top:6px;font-style:italic">* 아웃풋은 형태 설명용 예시이며 실제 거래사례가 아님</p>
+
+  <div class="two-col mt-20">
+    <div class="card teal-border">
+      <div class="card-title" style="color:var(--kpmg-teal);border-bottom-color:var(--kpmg-teal)">✓ 반드시 검증할 것</div>
+      <ul class="process-list">
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text">거래금액·드라이파우더 등 숫자는 모두 원출처(보도자료·공시) 확인</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text">거래사례 누락 가능 — Mergermarket·DART 등으로 교차점검</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text">'확인 필요' 표시 항목은 채워지기 전까지 사실로 다루지 않음</div></li>
+      </ul>
+    </div>
+    <div class="card xblue">
+      <div class="card-title">▸ 결과를 읽는 법</div>
+      <ul class="process-list">
+        <li class="process-item"><div class="process-dot"></div><div class="process-text">표가 그럴듯해도 '초안'일 뿐 — 완성된 롱리스트가 아님</div></li>
+        <li class="process-item"><div class="process-dot"></div><div class="process-text">인수자 유형(전략적/PE)이 섞여 나오므로 분리해서 관리</div></li>
+        <li class="process-item"><div class="process-dot"></div><div class="process-text">다음 단계(Signal·Strategic)로 넘길 후보를 여기서 1차 선별</div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Section: 롱→숏 -->
+<div class="section-block">
+  <div class="breadcrumb">II. 인수 후보군 발굴 · 롱리스트 → 숏리스트</div>
+  <div class="section-h2">롱리스트 → 숏리스트 — 좁히는 기준은 사람이 정한다</div>
+  <div class="section-lead">AI가 만든 롱리스트를 그대로 쓰지 않습니다. 3개의 축으로 거르는 작업 — 여기서부터가 자문사의 부가가치입니다.</div>
+
+  <div class="axis-flow">
+    <div class="axis-card">
+      <div class="axis-num">축 1</div>
+      <div class="axis-title">전략 적합성</div>
+      <div class="axis-desc">A사의 전력·냉각 인프라 자산과 직접 연관된 사업을 하는가? 인접 영역인가, 핵심인가?</div>
+    </div>
+    <div class="axis-arrow">→</div>
+    <div class="axis-card">
+      <div class="axis-num">축 2</div>
+      <div class="axis-title">자금력</div>
+      <div class="axis-desc">거래 규모를 감당할 현금성 자산·펀드 여력이 공개 정보로 확인되는가?</div>
+    </div>
+    <div class="axis-arrow">→</div>
+    <div class="axis-card">
+      <div class="axis-num">축 3</div>
+      <div class="axis-title">한국·아시아 진출 의지</div>
+      <div class="axis-desc">최근 아시아·한국 시장 확장 의지를 보인 적이 있는가? 진입 장벽은?</div>
+    </div>
+  </div>
+
+  <div class="keypoint mt-16">
+    <div class="keypoint-icon">🎯</div>
+    <div class="keypoint-text">롱리스트 (AI 도출, 20~30곳) → 3개 축으로 필터링 → <strong>숏리스트 (5~8곳, Signal·Strategic으로 이관)</strong></div>
+  </div>
+
+  <div class="two-col mt-20">
+    <div class="card xblue">
+      <div class="card-title">이 단계에서도 AI를 쓸 수 있다</div>
+      <p style="font-size:12.5px;color:var(--text-mid);line-height:1.7">각 축에 대한 1차 자료 수집을 AI로 보조할 수 있습니다. 예: <em>"위 인수자 각각에 대해 최근 아시아 시장 진출·확장 관련 공개 발표가 있었는지 찾아줘"</em> — 단, 점수화·우선순위 판단은 담당자가 산업 지식으로 수행합니다.</p>
+    </div>
+    <div class="card xblue">
+      <div class="card-title">왜 이 단계가 자문사의 가치인가</div>
+      <p style="font-size:12.5px;color:var(--text-mid);line-height:1.7">경쟁사도 같은 AI로 비슷한 롱리스트를 뽑을 수 있습니다. <strong style="color:var(--kpmg-blue1)">차별화는 '어떤 축으로 거르고, 어떤 순서로 컨택하느냐'에서 나옵니다.</strong> AI는 출발선을 똑같이 만들어 줄 뿐, 결승선은 사람이 만듭니다.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════ CHAPTER III ═══════════════════════════ -->
+<div class="chapter-divider" id="ch3">
+  <div class="chapter-num-lg">III</div>
+  <div class="chapter-div-text">
+    <h2>뉴스 플로우 기반의 딜 시그널 포착</h2>
+    <p>매수자의 '확장 의지'를 공개 뉴스에서 읽는 법 · 해석 원칙 · 전형적 함정</p>
+  </div>
+</div>
+
+<!-- Section: 시그널 -->
+<div class="section-block">
+  <div class="breadcrumb">III. 딜 시그널 포착 · STEP 2 — Signal</div>
+  <div class="section-h2">딜 시그널 — 매수자의 '확장 의지'를 공개 뉴스에서 읽는다</div>
+  <div class="section-lead">STEP 1의 숏리스트를 그대로 이어받습니다. 이제 각 매수자가 지금 움직이고 있는지 — 증설·펀드 조성·파트너십·경영진 발언 등 공개 신호를 모읍니다.</div>
+
+  <div class="signal-grid">
+    <div class="signal-card">
+      <div class="signal-icon">📈</div>
+      <div class="signal-name">증설·신규 투자</div>
+      <div class="signal-desc">데이터센터·전력 설비 CapEx 확대 발표</div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-icon">💰</div>
+      <div class="signal-name">펀드 조성</div>
+      <div class="signal-desc">인프라 전용 펀드 클로징 — 드라이파우더 확보</div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-icon">🤝</div>
+      <div class="signal-name">파트너십</div>
+      <div class="signal-desc">현지 디벨로퍼·운영사와의 협약 체결</div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-icon">🎤</div>
+      <div class="signal-name">경영진 발언</div>
+      <div class="signal-desc">실적발표·인터뷰에서의 확장 의지 표명</div>
+    </div>
+    <div class="signal-card">
+      <div class="signal-icon">📋</div>
+      <div class="signal-name">규제·정책 대응</div>
+      <div class="signal-desc">전력·입지 규제 변화에 따른 전략 조정</div>
+    </div>
+  </div>
+
+  <div class="two-col mt-20">
+    <div>
+      <div class="prompt-box">
+        <div class="prompt-label">AI에 입력하는 프롬프트 (국문)</div>
+        <div class="prompt-text">앞서 정리한 잠재 매수자들에 대해, 최근 12개월간 '데이터센터·전력 인프라 확장 의지'를 시사하는 공개 뉴스를 인수자별로 정리해줘.
+
+시그널 유형 예: 증설·신규 투자, 인프라 펀드 조성, 파트너십 체결, 경영진의 관련 발언.
+
+표로: 인수자 / 시그널 유형 / 기사 제목 / 보도 일자 / 출처(링크). 추측은 넣지 말고 보도된 것만.</div>
+        <div class="prompt-note">⚠ 검증: 시그널은 '딜'이 아니라 '가설의 출발점'. AI가 준 모든 기사 링크를 직접 열어 사실·시점을 확인하고, 오래된 뉴스가 섞이지 않았는지 본다.</div>
+      </div>
+    </div>
+    <div>
+      <table class="data-table">
+        <thead>
+          <tr><th>인수자</th><th>시그널 유형</th><th>기사 요지</th><th>보도</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>글로벌 전력설비 대기업</td>
+            <td>증설·신규 투자</td>
+            <td>데이터센터 전력 부문 생산능력 확대 발표</td>
+            <td>2025.下</td>
+          </tr>
+          <tr>
+            <td>대형 인프라 PE</td>
+            <td>펀드 조성</td>
+            <td>신규 인프라 펀드 목표액 상향 조성 완료</td>
+            <td>2025.中</td>
+          </tr>
+          <tr>
+            <td>전기·자동화 솔루션 기업</td>
+            <td>경영진 발언</td>
+            <td>CEO, 실적발표서 데이터센터 수요 대응 강조</td>
+            <td>2025.下</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:10px;color:var(--text-light);margin-top:6px;font-style:italic">* 예시이며 실제 거래사례가 아님</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section: 해석 원칙 + 함정 -->
+<div class="section-block">
+  <div class="breadcrumb">III. 딜 시그널 포착 · 해석과 함정</div>
+  <div class="section-h2">시그널을 어떻게 해석하고, 어디서 틀릴 수 있는가</div>
+  <div class="section-lead">수집한 시그널은 그대로 결론이 아닙니다. 해석에는 규칙이 있고, AI 출력에는 전형적인 함정이 있습니다.</div>
+
+  <div class="two-col">
+    <div>
+      <div class="card xblue" style="margin-bottom:0">
+        <div class="card-title">시그널 해석의 3원칙</div>
+        <div class="principle-list">
+          <div class="principle-item">
+            <div class="principle-num">1</div>
+            <div class="principle-content">
+              <h4>신호 ≠ 딜</h4>
+              <p>증설 발표가 곧 'A사 자산을 살 의향'은 아님. 확장 방향이 우리 자산과 맞물리는지를 본다</p>
+            </div>
+          </div>
+          <div class="principle-item">
+            <div class="principle-num">2</div>
+            <div class="principle-content">
+              <h4>조합으로 본다</h4>
+              <p>단일 뉴스보다, 같은 매수자에게서 여러 시그널이 겹칠 때 신뢰도가 올라감</p>
+            </div>
+          </div>
+          <div class="principle-item">
+            <div class="principle-num">3</div>
+            <div class="principle-content">
+              <h4>시점이 핵심</h4>
+              <p>12개월 전 발언과 지난달 펀드 조성은 무게가 다르다. 최신 신호에 가중치</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0;border:1px solid var(--border)">
+        <div class="card-title" style="color:var(--kpmg-red);border-bottom-color:var(--kpmg-red)">이 단계의 전형적 함정</div>
+        <div class="pitfall-list">
+          <div class="pitfall-item">
+            <div class="pitfall-icon">⚡</div>
+            <div class="pitfall-content">
+              <h4>환각 기사</h4>
+              <p>존재하지 않는 기사 제목·링크를 그럴듯하게 생성 — 링크를 직접 열어야만 잡힌다</p>
+            </div>
+          </div>
+          <div class="pitfall-item">
+            <div class="pitfall-icon">⏰</div>
+            <div class="pitfall-content">
+              <h4>오래된 정보</h4>
+              <p>학습 시점 한계로 1~2년 전 뉴스를 '최근'으로 제시 — 보도 일자를 반드시 확인</p>
+            </div>
+          </div>
+          <div class="pitfall-item">
+            <div class="pitfall-icon">🔍</div>
+            <div class="pitfall-content">
+              <h4>확증 편향</h4>
+              <p>원하는 결론에 맞는 시그널만 눈에 들어옴 — 반대 신호(확장 철회 등)도 함께 찾기</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="keypoint mt-20">
+    <div class="keypoint-icon">➡</div>
+    <div class="keypoint-text"><strong>STEP 2 → STEP 3 연결:</strong> 시그널이 강하게 겹치는 상위 3개 매수자를 골라, 다음 단계에서 '왜 이 자산이 그들에게 의미 있는가'를 깊게 파고듭니다.</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════ CHAPTER IV ═══════════════════════════ -->
+<div class="chapter-divider" id="ch4">
+  <div class="chapter-num-lg">IV</div>
+  <div class="chapter-div-text">
+    <h2>전략적 니즈 리서치</h2>
+    <p>'왜 이 자산이 그들에게 의미 있는가' — 매수자 컨택 자료의 토대 구성</p>
+  </div>
+</div>
+
+<!-- Section: 전략 니즈 -->
+<div class="section-block">
+  <div class="breadcrumb">IV. 전략적 니즈 리서치 · STEP 3 — Strategic</div>
+  <div class="section-h2">전략적 니즈 — '왜 이 자산이 그들에게 의미 있는가'</div>
+  <div class="section-lead">숏리스트 상위 3개 매수자로 좁혔습니다. 마지막 단계는 각 매수자 입장에서 이 딜의 명분(rationale)을 구조화하는 것 — 매수자 컨택 자료의 토대가 됩니다.</div>
+
+  <div class="two-col">
+    <div>
+      <div class="prompt-box">
+        <div class="prompt-label">AI에 입력하는 프롬프트 (국문)</div>
+        <div class="prompt-text">숏리스트 상위 3개 인수자 각각에 대해, 최근 3년 공개 IR·뉴스를 기반으로 다음을 정리해줘.
+
+① 핵심 성장전략
+② 데이터센터 인프라 포트폴리오의 공백
+③ 한국 전기전자 인프라 자산을 인수할 경우 그들에게 생기는 전략적 가치 (가설)
+
+각 항목마다 근거와 출처를 함께 표기하고, '사실'과 '추정'을 명확히 구분해서 써줘.</div>
+      </div>
+    </div>
+    <div>
+      <div class="memo-card">
+        <div class="memo-header">예상 아웃풋 — 인수자별 '전략 니즈 메모' 1차 초안</div>
+        <div style="padding: 10px 18px; background: rgba(0,51,141,0.08); font-size:11px; font-weight:700; color:var(--kpmg-blue1)">인수자 A — 글로벌 전력설비 대기업 (전략적)</div>
+        <div class="memo-row">
+          <div class="memo-key">① 핵심 성장전략</div>
+          <div class="memo-val"><span class="fact-tag">사실</span>데이터센터 전력 공급망 수직계열화 추진 (출처: IR)</div>
+        </div>
+        <div class="memo-row">
+          <div class="memo-key">② 포트폴리오 공백</div>
+          <div class="memo-val"><span class="fact-tag">사실</span>냉각 솔루션 역량은 상대적으로 약함 (출처: 사업보고서)</div>
+        </div>
+        <div class="memo-row">
+          <div class="memo-key">③ 전략적 가치</div>
+          <div class="memo-val"><span class="est-tag">추정</span>A사 냉각·전력 자산 인수 시 '전력+냉각' 패키지 완성 가능</div>
+        </div>
+      </div>
+      <p style="font-size:10.5px;color:var(--text-light);margin-top:8px;font-style:italic">→ 인수자 B·C에 대해서도 같은 구조로 반복 생성</p>
+    </div>
+  </div>
+
+  <div class="two-col mt-20">
+    <div class="card red-border">
+      <div class="card-title" style="color:var(--kpmg-red);border-bottom-color:var(--kpmg-red)">반드시 검증할 것</div>
+      <ul class="process-list">
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">전략 가설(③)은 '설득력 있는 추정'일 뿐 — IR·공시로 재확인 전까지 사실이 아님</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">'사실'로 표시된 항목도 원출처 직접 확인 — AI의 분류를 그대로 믿지 않음</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">산업 맥락에 맞는 가설인지는 담당자의 섹터 지식으로 판단·보완</div></li>
+      </ul>
+    </div>
+    <div class="card teal-border">
+      <div class="card-title" style="color:var(--kpmg-teal);border-bottom-color:var(--kpmg-teal)">이 초안을 어디에 쓰나</div>
+      <p style="font-size:12.5px;color:var(--text-mid);line-height:1.7">이 메모는 매수자 컨택 시 <strong style="color:var(--kpmg-blue1)">'그들의 언어로 딜을 설명하는' 자료의 토대</strong>가 됩니다. 검증·보완을 거친 뒤 티저·매수자별 IM 메시지로 발전시키며, <strong style="color:var(--kpmg-blue1)">최종 산출물은 반드시 시니어 검토</strong>를 거칩니다.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════ CHAPTER V ═══════════════════════════ -->
+<div class="chapter-divider" id="ch5">
+  <div class="chapter-num-lg">V</div>
+  <div class="chapter-div-text">
+    <h2>LOI 초안 작성</h2>
+    <p>AI로 할 수 있는 것과 지켜야 할 선 — 그리고 비식별 처리 원칙</p>
+  </div>
+</div>
+
+<!-- Section: LOI -->
+<div class="section-block">
+  <div class="breadcrumb">V. LOI 초안 작성</div>
+  <div class="section-h2">LOI 초안 작성 — 할 수 있는 것과 지켜야 할 선</div>
+  <div class="section-lead">발굴·검증을 거쳐 매수자와 접촉 단계에 들어서면 문서 작업이 시작됩니다. AI는 LOI 초안 작성을 가속하지만, 입력해도 되는 것과 안 되는 것이 분명합니다.</div>
+
+  <div class="two-col">
+    <div class="card teal-border">
+      <div class="card-title" style="color:var(--kpmg-teal);border-bottom-color:var(--kpmg-teal)">✓ AI로 할 수 있는 것</div>
+      <ul class="process-list">
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text">표준 LOI 구조·필수 조항의 1차 초안 작성</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text">조항별 톤(보수적 / 공격적) 비교안 생성</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text">국문 ↔ 영문 초안 전환 및 용어 정리</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text">누락 조항 점검용 체크리스트 생성</div></li>
+      </ul>
+    </div>
+    <div class="card red-border">
+      <div class="card-title" style="color:var(--kpmg-red);border-bottom-color:var(--kpmg-red)">■ 지켜야 할 선</div>
+      <ul class="process-list">
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">비공개 거래조건·금액은 직접 입력하지 않음</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">민감정보는 비식별·placeholder([금액]·[대상])로 처리</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">일반적 구조·표준문구 중심으로만 활용</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">법률 자문이 아님 — 반드시 법무·세무 검토</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="prompt-box mt-20">
+    <div class="prompt-label">프롬프트 예시 — 비식별 처리한 LOI 초안 요청</div>
+    <div class="prompt-text">데이터센터 인프라 사업부 인수를 위한 표준 LOI 초안을 작성해줘. 거래 구조는 [자산양수도], 매수자는 [전략적 인수자], 거래금액과 당사자명은 모두 [대괄호 placeholder]로 비워둬.
+
+필수 조항(거래 구조·가격 조건·독점협상권·확약사항·비밀유지·유효기간 등)을 빠짐없이 포함하고, 각 조항 옆에 '검토 시 주의할 점'을 한 줄씩 달아줘.</div>
+    <div class="prompt-note">원칙: AI 초안은 '검토의 출발점'. 서명되는 문서의 책임은 전적으로 자문팀과 자문사에 있습니다.</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════ CHAPTER VI ═══════════════════════════ -->
+<div class="chapter-divider" id="ch6">
+  <div class="chapter-num-lg">VI</div>
+  <div class="chapter-div-text">
+    <h2>SPA 등 문서 검토</h2>
+    <p>자료를 업로드하지 않고 활용하는 법 — 문서가 아니라 지식과 구조를 묻는다</p>
+  </div>
+</div>
+
+<!-- Section: SPA -->
+<div class="section-block">
+  <div class="breadcrumb">VI. SPA 등 문서 검토</div>
+  <div class="section-h2">SPA 검토 — 자료를 업로드하지 않고 활용하는 법</div>
+  <div class="section-lead">딜레마: 계약서 원문은 업로드할 수 없는데, SPA 같은 문서 검토에 AI를 어떻게 쓸 수 있을까요? 답은 '문서가 아니라 지식과 구조를 묻는 것'입니다.</div>
+
+  <div class="four-col">
+    <div class="card xblue">
+      <div style="font-size:28px;text-align:center;margin-bottom:12px">🔍</div>
+      <div class="card-title">일반 지식 질의</div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6">일반적인 독소조항·리스크 조항의 의미와 협상 쟁점을 학습</p>
+    </div>
+    <div class="card xblue">
+      <div style="font-size:28px;text-align:center;margin-bottom:12px">📋</div>
+      <div class="card-title">체크리스트 생성</div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6">표준 SPA 대비 누락·점검 항목 리스트를 확보</p>
+    </div>
+    <div class="card xblue">
+      <div style="font-size:28px;text-align:center;margin-bottom:12px">💡</div>
+      <div class="card-title">협상 포인트 발굴</div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6">조항별 대안 문구·논리 아이디어를 브레인스토밍</p>
+    </div>
+    <div class="card xblue">
+      <div style="font-size:28px;text-align:center;margin-bottom:12px">✏️</div>
+      <div class="card-title">비식별 문구 다듬기</div>
+      <p style="font-size:12px;color:var(--text-mid);line-height:1.6">식별정보를 제거한 문구 단위로만 표현을 검토</p>
+    </div>
+  </div>
+
+  <div class="prompt-box mt-20">
+    <div class="prompt-label">프롬프트 예시 — 문서가 아니라 '지식'을 묻는다</div>
+    <div class="prompt-text">기업 인수 SPA에서 매수인 입장에서 특히 주의해야 할 진술·보장(R&W) 조항과 손해배상 조항의 일반적인 쟁점을 정리해줘.
+
+각 쟁점에 대해 '매수인에게 불리하게 작용할 수 있는 경우'와 '협상 시 요구할 수 있는 대안'을 함께 알려줘.
+
+특정 계약서가 아니라 일반적인 실무 기준으로 설명해줘.</div>
+    <div class="prompt-note">절대 금지: SPA 원문 통째 업로드, 클라이언트가 식별되는 거래조건·당사자명 입력. AI는 계약서를 '읽어주는' 도구가 아니라 '쟁점을 학습'하는 도구입니다. 최종 검토는 변호사·시니어가 수행합니다.</div>
+  </div>
+
+  <div class="card red-border mt-20">
+    <div class="card-title" style="color:var(--kpmg-red);border-bottom-color:var(--kpmg-red)">🚫 절대 금지 사항</div>
+    <div class="two-col mt-8">
+      <ul class="process-list">
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">SPA·IM·재무자료 등 원문 통째 업로드</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">클라이언트명·딜명이 식별되는 정보 입력</div></li>
+      </ul>
+      <ul class="process-list">
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">비공개 거래조건·가격정보 직접 기입</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-red)"></div><div class="process-text">AI 산출물을 법률 검토 없이 그대로 사용</div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════ PROMPT COMPARE ═══════════════════════════ -->
+<div class="chapter-divider" id="prompt-compare">
+  <div class="chapter-num-lg" style="font-size:1.6rem;letter-spacing:3px;opacity:0.85">TIP</div>
+  <div class="chapter-div-text">
+    <h2>좋은 프롬프트 vs 나쁜 프롬프트</h2>
+    <p>같은 질문, 다른 결과 — 프롬프트 설계가 AI 아웃풋의 품질을 결정한다</p>
+  </div>
+</div>
+
+<div class="section-block" style="background:#fff">
+  <p class="cmp-section-intro">AI는 입력한 대로 응답한다. 모호하게 물으면 모호하게 답하고, 구체적으로 물으면 실무에 쓸 수 있는 결과를 낸다. 아래 비교는 실제 Deal Advisory 업무 맥락에서 동일한 질문이 어떻게 달라지는지 보여준다.</p>
+
+  <!-- Scenario A -->
+  <div class="cmp-scenario-title">① 인수 후보군 발굴 — 숏리스트 생성 (Chapter II)</div>
+  <div class="cmp-wrap">
+    <div class="cmp-box cmp-bad">
+      <div class="cmp-tag bad">✗ 나쁜 프롬프트</div>
+      <div class="cmp-text">글로벌 데이터센터 인수자 알려줘.</div>
+      <div class="cmp-why">
+        ❌ 문제: 섹터·기간·거래 유형·분류 기준 없음. AI는 Wikipedia 수준 목록을 나열하거나 이미 알고 있는 대형 플레이어 5개를 반복할 뿐이다. 실무에 쓸 수 없는 아웃풋.
+      </div>
+    </div>
+    <div class="cmp-box cmp-good">
+      <div class="cmp-tag good">✓ 좋은 프롬프트</div>
+      <div class="cmp-text">최근 3년간 데이터센터 인프라(전력·냉각·전기설비) M&A를 실행한 전략적 인수자와 PE를 거래사례 기반으로 정리해줘. 국가별·규모별로 분류하고, 각 플레이어가 어떤 자산 유형을 선호하는지 인수 패턴도 함께 적어줘.</div>
+      <div class="cmp-why">
+        ✅ 포인트: ① 기간(3년) ② 세부 섹터(전력·냉각) ③ 거래 유형(M&A 실행) ④ 분류 기준(국가·규모) ⑤ 추가 요청(인수 패턴). 구체성이 올라갈수록 아웃풋의 밀도가 달라진다.
+      </div>
+    </div>
+  </div>
+
+  <!-- Scenario B -->
+  <div class="cmp-scenario-title">② 뉴스 플로우 기반 딜 시그널 탐색 (Chapter III)</div>
+  <div class="cmp-wrap">
+    <div class="cmp-box cmp-bad">
+      <div class="cmp-tag bad">✗ 나쁜 프롬프트</div>
+      <div class="cmp-text">BlackRock 최근 뉴스 정리해줘.</div>
+      <div class="cmp-why">
+        ❌ 문제: 주제·기간·목적이 없다. AI는 일반 기업 뉴스를 뭉뚱그려 나열하고, 우리가 찾는 '딜 시그널'과 무관한 ESG·인사·실적 기사가 섞인다. 시그널과 노이즈가 분리되지 않는다.
+      </div>
+    </div>
+    <div class="cmp-box cmp-good">
+      <div class="cmp-tag good">✓ 좋은 프롬프트</div>
+      <div class="cmp-text">숏리스트 상위 3개 인수자(BlackRock, Brookfield, KKR) 각각에 대해 최근 12개월간 데이터센터·전력 인프라 확장 의지를 시사하는 공개 뉴스를 정리해줘. 시그널 유형(전략 발표 / 투자집행 / 파트너십)별로 구분하고, 기사 날짜·출처도 함께 표기해줘.</div>
+      <div class="cmp-why">
+        ✅ 포인트: ① 대상 고정(3개사) ② 기간(12개월) ③ 목적(확장 의지 시사) ④ 분류 체계(시그널 유형) ⑤ 출처 요구(날짜·링크). AI 산출물을 그대로 메모에 붙여 쓸 수 있는 구조.
+      </div>
+    </div>
+  </div>
+
+  <!-- Scenario C -->
+  <div class="cmp-scenario-title">③ 전략적 니즈 리서치 — 매수자 전략 이해 (Chapter IV)</div>
+  <div class="cmp-wrap">
+    <div class="cmp-box cmp-bad">
+      <div class="cmp-tag bad">✗ 나쁜 프롬프트</div>
+      <div class="cmp-text">BlackRock 투자 전략 설명해줘.</div>
+      <div class="cmp-why">
+        ❌ 문제: 목적과 관점이 없다. AI는 운용자산·비즈니스 라인 개요 같은 일반 정보를 쏟아낸다. 우리가 원하는 것은 '이 자산이 왜 저 인수자에게 매력적인가'를 설명할 수 있는 논리인데, 그런 관점이 담기지 않는다.
+      </div>
+    </div>
+    <div class="cmp-box cmp-good">
+      <div class="cmp-tag good">✓ 좋은 프롬프트</div>
+      <div class="cmp-text">BlackRock의 최근 3년 공개 IR·뉴스를 기반으로 ① 현재 인프라 투자 테마 ② 포트폴리오 공백(데이터센터 자산 보유 현황) ③ 최근 인수 결정에서 반복되는 논리를 정리해줘. 목적은 우리 매각 자산이 BlackRock의 전략 니즈에 부합하는지 확인하는 것이야.</div>
+      <div class="cmp-why">
+        ✅ 포인트: ① 정보 출처 지정(IR·공개 뉴스) ② 3가지 구체 질문 ③ 목적 명시(전략 부합 여부 확인). 목적을 알려주면 AI는 불필요한 정보를 걸러내고 필요한 관점에서 답한다.
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--kpmg-xblue);border-left:4px solid var(--kpmg-blue2);margin-top:8px">
+    <div class="card-title" style="color:var(--kpmg-blue1);border-bottom-color:var(--kpmg-blue2)">💡 좋은 프롬프트의 공통 원칙</div>
+    <div class="two-col mt-8">
+      <ul class="process-list">
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text"><strong>기간·범위를 숫자로 고정</strong> — "최근"보다 "최근 12개월"</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text"><strong>분류 기준을 미리 제시</strong> — AI에게 테이블 구조를 가르쳐라</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text"><strong>출처 요구를 명시</strong> — 날짜·링크 없는 AI 리서치는 검증 불가</div></li>
+      </ul>
+      <ul class="process-list">
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text"><strong>목적을 한 문장으로 덧붙여라</strong> — AI는 목적을 알면 관점을 맞춘다</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text"><strong>섹터·자산 유형을 구체화</strong> — "인프라"보다 "전력·냉각 설비"</div></li>
+        <li class="process-item"><div class="process-dot" style="background:var(--kpmg-teal)"></div><div class="process-text"><strong>질문은 3개 이하로</strong> — 한 번에 너무 많으면 AI 답이 얕아진다</div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════ WRAP-UP ═══════════════════════════ -->
+<section class="wrapup" id="wrapup">
+  <div class="wrapup-title">WRAP-UP</div>
+  <div class="wrapup-h2">오늘 기억할 3가지</div>
+
+  <div class="takeaway-list">
+    <div class="takeaway-item">
+      <div class="takeaway-num">01</div>
+      <div class="takeaway-body">
+        <h3>한 섹터를 끝까지 관통하면, AI는 강력한 리서치 파트너다</h3>
+        <p>Sourcing → Signal → Strategic — 같은 매수자 그룹을 따라가며 발굴·검증·전략화. 단편적 활용이 아닌 연결된 흐름에서 AI의 가치가 극대화된다</p>
+      </div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">02</div>
+      <div class="takeaway-body">
+        <h3>AI는 롱리스트, 사람은 숏리스트</h3>
+        <p>1차 수집·구조화는 AI가, 좁히는 기준·해석·판단은 담당자가 — 거기서 자문사의 가치가 나온다. 경쟁사도 같은 도구를 쓴다는 사실을 잊지 않는다</p>
+      </div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">03</div>
+      <div class="takeaway-body">
+        <h3>검증되지 않은 출력은 정보가 아니라 리스크</h3>
+        <p>모든 사실은 원출처로 확인하고, 비공개 자료는 입력하지 않으며, 최종 산출물은 전문가가 검토한다. 이 원칙을 통과하지 못한 산출물은 쓰지 않는다</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapup-div"></div>
+
+  <!-- Risk -->
+  <div style="margin-bottom:32px">
+    <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:16px">반드시 인지해야 할 4가지 리스크</div>
+    <div class="risk-grid">
+      <div class="risk-card">
+        <div class="risk-num">1</div>
+        <div class="risk-title">환각 (Hallucination)</div>
+        <div class="risk-desc">없는 사실·출처를 그럴듯하게 생성. 링크를 직접 열어야만 잡힌다</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-num">2</div>
+        <div class="risk-title">정보 시점</div>
+        <div class="risk-desc">최신성·정확성이 보장되지 않음. 학습 컷오프 이후 정보는 없거나 부정확</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-num">3</div>
+        <div class="risk-title">기밀 유지</div>
+        <div class="risk-desc">입력 데이터가 외부 유출·학습 대상이 될 수 있음. 비공개 정보 입력 금지</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-num">4</div>
+        <div class="risk-title">검증 책임</div>
+        <div class="risk-desc">산출물의 정확성·적법성 책임은 전적으로 사용자에게 있음</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div>
+    <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:16px">AI 산출물을 쓰기 전, 5가지 확인</div>
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text" style="color:#d0dde8">비공개 자료를 외부 AI에 업로드하지 않았는가</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text" style="color:#d0dde8">모든 사실관계를 원출처로 교차검증했는가</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text" style="color:#d0dde8">민감정보를 비식별·placeholder로 처리했는가</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text" style="color:#d0dde8">시니어·전문가(법무·세무 포함) 검토를 거쳤는가</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"><div class="check-mark">✓</div></div>
+        <div class="check-text" style="color:#d0dde8">AI 사용 사실과 그 한계를 인지·공유했는가</div>
+      </div>
+    </div>
+    <div style="background:rgba(234,170,0,0.1);border:1px solid rgba(234,170,0,0.3);border-radius:6px;padding:14px 18px;margin-top:20px">
+      <p style="font-size:12.5px;color:var(--kpmg-yellow);font-weight:600">원칙: 이 체크리스트를 통과하지 못한 산출물은 사용하지 않습니다. 검증되지 않은 AI 출력은 '정보'가 아니라 '리스크'입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ DISCLAIMER ═══════════════════════════ -->
+<section class="disclaimer-section" id="disclaimer">
+  <div class="disclaimer-h2">⚠ Disclaimer</div>
+  <div class="disclaimer-h3">Claude 미도입 안내 및 교육 자료 관련 고지</div>
+  <div class="disclaimer-grid">
+    <div class="disclaimer-card">
+      <h4>🤖 생성형 AI 도구 미도입 안내</h4>
+      <p>본 교육에서 시연되는 <strong>Claude</strong>를 포함한 범용 생성형 AI 도구(ChatGPT, Claude, Gemini 등)는 현재 삼정KPMG 공식 업무용으로 도입되지 않은 상태입니다. 법인 내 AI 도입 검토가 진행 중이며, 실제 클라이언트 업무에의 적용 전 반드시 법인의 정보보안 및 컴플라이언스 정책을 확인하여야 합니다.</p>
+    </div>
+    <div class="disclaimer-card">
+      <h4>📄 교육 자료의 성격</h4>
+      <p>본 자료에 포함된 모든 거래 시나리오·기업명·재무수치는 <strong>교육 목적의 가상 사례</strong>이며 실제 삼정KPMG의 클라이언트·딜을 지칭하지 않습니다. 실제 AI 출력 예시 또한 형태 설명을 위한 예시이며, 특정 거래사례를 나타내지 않습니다.</p>
+    </div>
+    <div class="disclaimer-card">
+      <h4>🔒 정보보안 원칙</h4>
+      <p>본 교육 자료는 <strong>사내 교육 전용</strong>이며 외부 배포를 금지합니다. 클라이언트 관련 비공개 정보를 외부 AI 서비스에 입력하는 행위는 법인의 정보보안 정책 및 고객과의 기밀유지 의무를 위반할 수 있습니다. 실제 활용 시 관련 정책을 반드시 준수하시기 바랍니다.</p>
+    </div>
+    <div class="disclaimer-card">
+      <h4>⚖️ AI 산출물의 한계</h4>
+      <p>AI가 생성하는 모든 산출물은 <strong>1차 초안</strong>에 불과하며, 최종 판단과 책임은 담당자 및 자문팀에 있습니다. 특히 법률·세무 관련 문서(LOI, SPA 등)는 반드시 전문 자격을 갖춘 법무·세무 전문가의 검토를 거쳐야 하며, AI 산출물을 법률 자문으로 오인해서는 안 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    삼정KPMG 경제연구원 · Deal Advisory 사내 교육<br>
+    © 2026 Samjong KPMG. 사내 교육용 — 무단 배포 금지<br>
+    Made by Jin Woo Choi · KPMG AI TFT / Internal Use Only
+  </div>
+  <div class="footer-right">FY26 Deal Advisory AI 교육 | May 2026</div>
+</footer>
+
+<script>
+// Intersection Observer for nav pills active state
+const sections = document.querySelectorAll('[id]');
+const pills = document.querySelectorAll('.nav-pill[href^="#"]');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      pills.forEach(p => {
+        p.classList.remove('active');
+        if (p.getAttribute('href') === '#' + id) p.classList.add('active');
+      });
+    }
+  });
+}, { threshold: 0.25 });
+
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
